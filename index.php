@@ -52,7 +52,7 @@
           </form>
 
           <form action="add.php">
-            <button type="submit" class="btn btn-default navbar-btn" id="gold">Index Your Links</button>
+            <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
           </form>
 
 
