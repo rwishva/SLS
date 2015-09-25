@@ -10,8 +10,8 @@
 <html>
     <head>
         
-        <link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
-        <link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+        <link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
       <!-- <link href="css/style.css" rel="stylesheet"> -->
     </head>
         <body>
@@ -49,6 +49,10 @@
       
       <form action="add.php">
             <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
+          </form>
+
+          <form action="add.php">
+            <button type="submit" class="btn btn-default navbar-btn" id="gold">Index Your Links</button>
           </form>
 
 
@@ -172,7 +176,7 @@
                           echo "<a id='res' href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
                           echo "<br>";
                           }else{
-                          echo "<a id='res' href='roogle/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                          echo "<a id='res' href='SLS/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
                           echo "<br>";
                           }
                           if(isset($r['_source']['host'])){
