@@ -1,17 +1,17 @@
 <!-- <div class='container-fluid' id='1'>
 <div class='row-fluid' style='background-color: #ffffff'>
 <div class='centering text-center' style='background-color: #ffffff'>
-<h1>Roogle</h1>
+<h1>SLS</h1>
 </div>
 </div> -->
 
-<nav class="navbar roogle">
+<nav class="navbar SLS">
   <div class="container-fluid">
     <div class="row-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
-      <a class="navbar-brand" href="/roogle/">Roogle</a>
+      <a class="navbar-brand" href="/SLS/">SLS</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,7 +21,7 @@
        
       <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Rangana</a></p>
       </form>
-      <!-- <p class="navbar-text">Roogle Is Best Search</p> -->
+      <!-- <p class="navbar-text">SLS Is Best Search</p> -->
     
       
     </div><!-- /.navbar-collapse -->

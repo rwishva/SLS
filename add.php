@@ -9,8 +9,8 @@ if (!isset($_SESSION['luser'])) {
 <html>
 <head>
 <script src="js/jquery.min.js"></script>
-<link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
-<link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+<link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
+<link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
 
 
 <script>
@@ -49,7 +49,7 @@ $(document).ready(function() {
                     <div class='centering text-center'>
                     <div class="col-sm-4 boxborder"></div>
                       <div class="col-sm-4 boxborder">
-                      <div id="title"><h1>Roogle</h1></div>
+                      <div id="title"><h1>SLS</h1></div>
                       <!-- <form action="insert_index.php" name="form1" method="post" id="addform">
                         <label>Title
                         <br>
@@ -150,7 +150,7 @@ $(document).ready(function() {
   <div class="container">
    <h1>Hello, world!</h1>
   <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="/roogle" role="button">Learn more</a></p>
+  <p><a class="btn btn-primary btn-lg" href="/SLS" role="button">Learn more</a></p>
   </div>
 </div>
 
