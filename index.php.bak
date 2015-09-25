@@ -1,0 +1,224 @@
+<?php
+    session_start();
+    require_once 'init.php';
+    include_once 'functions.php';
+    
+    #require 'validatesession.php';
+           
+?>
+ <!-- From here all HTML coding can be done -->
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+        <link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
+    	<!-- <link href="css/style.css" rel="stylesheet"> -->
+
+      <script type="text/javascript "src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$("#search_results").slideUp();
+$("#button_find").click(function(event){
+event.preventDefault();
+search_ajax_way();
+});
+$("#search_query").keyup(function(event){
+event.preventDefault();
+search_ajax_way();
+});
+
+});
+
+function search_ajax_way(){
+$("#search_results").show();
+var search_this=$("#search_query").val();
+$.post("search.php", {searchit : search_this}, function(data){
+$("#display_results").html(data);
+
+})
+}
+</script>
+
+
+
+
+    </head>
+        <body>
+                
+               <?php include 'header.php';?> 
+               <div class='container-fluid' id='1'>
+  <div class='row-fluid' style='background-color: #ffffff'>
+    <div class='centering text-center' style='background-color: #ffffff'>
+      <h1>Roogle</h1>
+    </div>
+  </div>
+</div>
+
+ <div class="container-fluid">
+    <div class="row" id="searchbar">
+  	
+  		<div class="col-sm-12">
+		  	 <form>
+  		  		<div class="centering text-center" id="searchbox">
+
+  				  			<div id="imaginary_container"> 
+  				                <div class="input-group stylish-input-group">
+  				                    <input type="text" class="form-control"  placeholder="Search"  name="q" >
+  				                    <span class="input-group-addon">
+  				                        <button type="submit">
+  				                            <span class="glyphicon">Search</span>
+  				                        </button>  
+  				                    </span>
+  				                </div>
+  				        </div>
+  				  </div>
+			   </form>
+		  </div>
+    </div>
+    </div>
+
+<div class="container-fluid">
+    <div class="row" id="searchbar">
+  		<div class="col-sm-2 results">Ad-Space</div>
+  		<div class="col-sm-6 results">
+        <div class="row" id="mainhead">
+          <a id='res' style='text-decoration: none'>Results From CC</a>
+        </div>
+          <div id="wrap">            
+          <?php
+              if(isset($_GET['q']))
+              if($_GET['q']!=null)
+              {
+                      $q = $_GET['q'];
+                      $user = 'notlogged';
+                      $ip = $_SERVER['REMOTE_ADDR'];
+                      if(isset($_SESSION['luser']))
+                      $user = $_SESSION['luser'];   
+                       
+                      $index = "srilanka";
+                      $type = "searches";
+                      $keys = explode(" ",$_GET['q']);
+                      $keys_count = count($keys);
+                   
+                   $indexed  = $client->index([
+                   'index' => $index,
+                   'type' => $type,
+                   'body' => [
+                   'user' => $user,
+                   'ip' => $ip,
+                   'searched' => $q
+                   ]
+                   ]);
+
+                     $params = [
+                            'index' => 'srilanka',
+                            'type' => 'links',
+                            'body' => [
+                                        'query' => [
+                                            'bool' => [ 
+                                                'should' => [ 
+                                                                ['match' => ['_all' => $q]]
+                                    //['match' => ['keywords' => $q]],
+                                    //['match' => ['title' => $q]]
+                                ]
+                            ]
+                        ]
+                    ]
+                ];
+
+
+
+
+                 }
+                   elseif($_GET['q']==null) {
+
+                      $params = [
+                            'index' => 'srilanka',
+                            'type' => 'links',
+                            'body' => [
+                                        'query' => [
+                                            'bool' => [ 
+                                                'should' => [ 
+                                                               // ['match' => ['_all' => $q]]
+                                    ['match' => ['user' => 'rangana']],
+                                    //['match' => ['title' => $q]]
+                                ]
+                            ]
+                        ]
+                    ]
+                ];
+                     # code...
+                   }
+                  
+           
+                      
+            
+                  #$params = "['index' => 'srilanka','type' => 'links','body' => ['query' => ['bool' => [ 'should' => [['match' => ['_all' => 'this']],['match' => ['_all' => 'is']],['match' => ['_all' => 'fuck']]]]]]]";
+                  #echo $params;
+                  $response = $client->search($params);
+                  
+                   echo "<div id='title'>";
+                   // echo "<a id='res' style='text-decoration: none'>Results From CC</a>";
+                   echo "</div>";
+                  if($response['hits']['total']>0)
+                  {
+                    $results_count = $response['hits']['total'];
+                   $results = $response['hits']['hits'];
+                   $took = $response['took'];
+                   $took = $took/1000;
+                   
+                   echo "<div class='results'>";   
+                   //echo '<pre>', print_r($response), '</pre>';
+                   //die;
+                   
+                   if($results_count<10){
+                   echo "<a style='color: #808080'>First ".$results_count." of ".$results_count." results (".$took." seconds)</a>";
+                   }
+                   else{
+                   echo "<a style='color: #808080'>First 10 of ".$results_count." results (".$took." seconds)</a>";    
+                   }
+                   echo "<br>";
+                   echo "<br>"; 
+                   foreach($results as $r)
+                   {
+                          if($r['_source']['link']){
+                          echo "<a id='res' href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                          echo "<br>";
+                          }else{
+                          echo "<a id='res' href='roogle/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                          echo "<br>";
+                          }
+                          if(isset($r['_source']['host'])){
+                          echo "<a class='host' style='color: #006621'>".$r['_source']['host']."</a>";
+                          echo "<br>";
+                          }   
+                          echo "<a class='description' style='color: #545454'>".$r['_source']['description']."</a>";
+                          echo "<br>";
+                          echo "<a class='keywords' style='color: #545454'>Tags :".implode(', ',$r['_source']['keywords'])."</a>";
+                          echo "<br>";
+                          echo "<br>";
+                   }
+                   echo "</div>";
+                  }
+                  else {
+                          echo "<div class='center'>";
+                          echo "Sorry No Results found  :(";
+                          echo "</div>";
+                      }
+              
+              // else {
+              //         echo "<div class='center'>";
+              //         echo "We Have Nothing to Search :/";
+              //         echo "</div>";
+              // }
+          ?>
+          </div>
+        </div>
+		  <div class="col-sm-4 results">Ad-Space</div>
+	</div>
+</div>  
+<?php include 'footer.php';?>
+                    </body>
+                    
+            </html>
+

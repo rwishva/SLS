@@ -1,0 +1,31 @@
+<?php 
+    $t = time();
+    
+    echo "<div id='header'>";
+    echo "<a href='/roogle/'>".$t."</a>";
+    echo " | ";
+    #echo "<a href='/roogle/'>".$_SESSION['expire']."</a>";
+    #echo " | ";
+    echo "<a href='/roogle/'>Home</a>";
+    echo " | ";
+    echo "<a href='/roogle/psearch.php'>Trends(Beta)</a>";
+    echo " | ";
+    echo "<a href='/roogle/add.php'>Index me</a>";
+    echo " | ";
+    echo "<a>".date('Y-m-d',$t)."</a>";
+    echo " | ";
+    //echo $_SERVER['REMOTE_ADDR'];
+    //echo " | ";
+    if(isset($_SESSION['luser'])){
+    echo "<a href='/roogle/logout.php'>Logout</a>";
+    echo "(";
+    echo "<a><b>".ucfirst($_SESSION['luser'])."</b></a>";
+    echo ")";
+    }else{
+    echo "<a href='/roogle/login.php'>Login</a>";  
+    }
+    
+    echo "</div>";
+    
+
+?>

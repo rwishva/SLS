@@ -9,13 +9,15 @@ if (!isset($_SESSION['luser'])) {
 <html>
 <head>
 <script src="js/jquery.min.js"></script>
-<link rel='stylesheet' type='text/css' href='/google/css/style.css' />
+<link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
+<link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+
 
 <script>
 $(document).ready(function() {
     $('#addform').submit(function() {
         //event.preventDefault();
-        var status = '<img class="loading" src="loading.gif" alt="Loading..." />';
+        var status = '<img id="img" class="loading" src="loading-2.gif" alt="Loading..." />';
         $("#ajax").after(status);
         $.ajax({
             type: 'POST',
@@ -41,11 +43,14 @@ $(document).ready(function() {
 </head>
 <body>
                 <?php include 'header.php';?>
-                <div id="title"><h1>Index Links</h1></div>
-                <div class="center"></div>
-                <div class="center" id=ad>
-                <div id="msg"></div>
-                    <form action="insert_index.php" name="form1" method="post" id="addform">
+
+                <div class='container-fluid' id='indexit'>
+                  <div class='row-fluid'>
+                    <div class='centering text-center'>
+                    <div class="col-sm-4 boxborder"></div>
+                      <div class="col-sm-4 boxborder">
+                      <div id="title"><h1>Roogle</h1></div>
+                      <!-- <form action="insert_index.php" name="form1" method="post" id="addform">
                         <label>Title
                         <br>
                         <input type="text" name="title" required><br>
@@ -65,8 +70,96 @@ $(document).ready(function() {
                         <br>
                         <input type=submit  id=addbtn value="Index">
                         <span id="ajax"></span>
+                    </form> -->
+                      <form class="form-horizontal" id="addform" action="insert_index.php">
+                        <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Index Your Links</legend>
+
+                        <!-- Text input-->
+                        <div id="left-text">
+                        <div class="control-group">
+                          <label class="control-label" for="title">Title</label>
+                          <div class="controls">
+                            <input name="title" type="text" placeholder="Title" class=" form-control" required="">
+                            
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="control-group">
+                          <label class="control-label" for="link">Link</label>
+                          <div class="controls">
+                            <input id="link" name="link" type="text" placeholder="Link" class=" form-control" required="">
+                           
+                          </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="control-group">
+                          <label class="control-label" for="description">Description</label>
+                          <div class="controls">
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                          </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="control-group">
+                          <label class="control-label" for="keywords">Tags</label>
+                          <div class="controls">
+                            <input id="keywords" name="keywords" type="text" placeholder="Comma, Seperated" class=" form-control" required="">
+                            
+                          </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="control-group">
+                          <label class="control-label" for="submit"></label>
+                          <div class="controls">
+                            <button id="submit" name="submit" type="submit" class="btn btn-success">Index</button>
+                            <span id="ajax"></span>
+                            <p id="msg"></p>
+                          </div>
+                        </div>
+
+                        </div>
+                        </fieldset>
                     </form>
+
+
+
+
+                    </div>
+                    <div class="col-sm-4 boxborder"></div>
+                    </div>
+                  </div>
                 </div>
+
+
+
+                
+                <div class="center"></div>
+                <div class="center" id=ad>
+                <div id="msg"></div>
+                </div>
+
+
+
+                <div class="jumbotron">
+  <div class="container">
+   <h1>Hello, world!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="/roogle" role="button">Learn more</a></p>
+  </div>
+</div>
+
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="//www.youtube.com/watch?v=gO6cFMRqXqU"></iframe>
+</div>
+
+
                 <?php include 'footer.php';?>
     </body>
 </html>

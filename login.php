@@ -5,7 +5,8 @@
 
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='/google/css/style.css' />
+<link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+            <link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
 </head>
 <body>
 <?php include 'header.php';?>
@@ -49,12 +50,12 @@
             $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
             $set_lastlogin_sql = "UPDATE users set lastlogin=now() where username like '%$v3%'";
             $set_lastlogin_query = mysqli_query($set_lastlogin_sql);
-            header('Location: /google/');
+            header('Location: /roogle/');
         } else {
             
                 echo "<html>";
                 echo "<head>";
-                echo "<link rel='stylesheet' type='text/css' href='/google/css/style.css' />";
+                echo "<link rel='stylesheet' type='text/css' href='/roogle/css/style.css' />";
                 echo "</head>";
                 echo "</body>";
                 echo "<div class='center' id='main'>";
@@ -66,7 +67,7 @@
         else {
             echo "<html>";
             echo "<head>";
-            echo "<link rel='stylesheet' type='text/css' href='/google/css/style.css' />";
+            echo "<link rel='stylesheet' type='text/css' href='/roogle/css/style.css' />";
             echo "</head>";
             echo "</body>";
             echo "<div class='center' id='main'>";

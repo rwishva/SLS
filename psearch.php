@@ -10,7 +10,8 @@
             <html>
             <head>
             <title>What Others Search</title>
-            <link rel='stylesheet' type='text/css' href='/google/css/style.css' />
+            <link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
+            <link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
             </head>
             <body>
                 
