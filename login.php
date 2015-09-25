@@ -1,12 +1,12 @@
 <?php
-    include("db.php");
+    // include("db.php");
     session_start();
 ?>
 
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='/roogle/css/bstyle.css' />
-            <link href='/roogle/css/bootstrap.min.css' rel='stylesheet'>
+<link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
+            <link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
 </head>
 <body>
 <?php include 'header.php';?>
@@ -38,10 +38,12 @@
         $v3 = $_POST['username'];
         $v4 = $_POST['pwd'];
         $get_user_sql = "SELECT * from users where username like '%$v3%' LIMIT 1";
-        $get_user_query = mysqli_query($conn,$get_user_sql);
+        // $get_user_query = mysqli_query($conn,$get_user_sql);
         
-        if(mysqli_num_rows($get_user_query)!=0){
-        $rs = mysqli_fetch_assoc($get_user_query);
+        // if(mysqli_num_rows($get_user_query)!=0){
+        // $rs = mysqli_fetch_assoc($get_user_query);
+        $rs['username'] = "rangana";
+        $rs['passwd'] = "123456";
         if ($rs['username']==$v3 && $rs['passwd']==$v4)
         {
             $_SESSION['luser'] = $v3;
@@ -49,13 +51,13 @@
             $_SESSION['start'] = time();
             $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
             $set_lastlogin_sql = "UPDATE users set lastlogin=now() where username like '%$v3%'";
-            $set_lastlogin_query = mysqli_query($set_lastlogin_sql);
-            header('Location: /roogle/');
+            // $set_lastlogin_query = mysqli_query($set_lastlogin_sql);
+            header('Location: /SLS/');
         } else {
             
                 echo "<html>";
                 echo "<head>";
-                echo "<link rel='stylesheet' type='text/css' href='/roogle/css/style.css' />";
+                echo "<link rel='stylesheet' type='text/css' href='/SLS/css/style.css' />";
                 echo "</head>";
                 echo "</body>";
                 echo "<div class='center' id='main'>";
@@ -67,7 +69,7 @@
         else {
             echo "<html>";
             echo "<head>";
-            echo "<link rel='stylesheet' type='text/css' href='/roogle/css/style.css' />";
+            echo "<link rel='stylesheet' type='text/css' href='/SLS/css/style.css' />";
             echo "</head>";
             echo "</body>";
             echo "<div class='center' id='main'>";
@@ -76,6 +78,6 @@
             echo "</body>";
             echo "</html>"; 
             
-        }}
+        }
     
 ?>

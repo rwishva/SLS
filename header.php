@@ -4,6 +4,18 @@
 <h1>SLS</h1>
 </div>
 </div> -->
+<?php
+// session_start();
+if (isset($_SESSION['luser'])) {
+  # code...
+  $username = $_SESSION['luser'];
+}
+else
+{
+  $username = "Admin";
+}
+
+?>
 
 <nav class="navbar SLS">
   <div class="container-fluid">
@@ -19,7 +31,7 @@
       <form action="login.php">
       <button type="submit" class="btn btn-default navbar-btn pull-right" >Sign in</button>
        
-      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">Rangana</a></p>
+      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><?php echo $username; ?></a></p>
       </form>
       <!-- <p class="navbar-text">SLS Is Best Search</p> -->
     

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'init.php';
+    // require_once 'init.php';
     include_once 'functions.php';
     
     #require 'validatesession.php';
