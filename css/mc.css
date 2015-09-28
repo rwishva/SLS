@@ -1,0 +1,108 @@
+.box {
+    background-color: lightgrey;
+    background: url('css/bodybg.gif') repeat #FFFFFF;
+    width: 1003px;
+    height: 1003px;
+    /*padding: 25px;*/
+    border: 1px solid #BABABB;
+    margin: 25px;
+    margin-top: 0;
+    vertical-align: middle;
+}
+body{
+	background: url('css/bodybg.gif') repeat #FFFFFF;
+}
+.SLS{
+	background-color: black;
+}
+#indexbtn {
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    line-height: 1;
+    padding: .6em .8em;
+    background: #009afd;
+    -webkit-transition: background 0.15s ease, color 0.15s ease;
+    -moz-transition: background 0.15s ease, color 0.15s ease;
+    -ms-transition: background 0.15s ease, color 0.15s ease;
+    -o-transition: background 0.15s ease, color 0.15s ease;
+    border: 1px solid #1777b7;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
+    border-radius: 3px;
+
+  }
+  #describe{
+  	color: white;
+  }
+  a{
+  	color: #FFD700;
+  }
+  #footer{
+  	    margin-bottom: 0;
+  	    height: 10px;
+  	    min-height: 10px;
+  	    background-color: transparent;	
+  }
+  #footer a{
+  	color: #BABABB;
+  }
+
+table, th, td {
+    border: 1px solid #8E8E8E;
+}
+tr{
+  height: 10px;
+}
+#pixl{
+  position: relative;
+  clip: rect(5, 1, 5, 1);
+  border: none;
+  float: left;
+  
+}
+#FAQ
+{
+  margin-top: -5px;
+  margin-right: 5px;
+}
+
+a.login {
+  text-decoration: none;
+  background: #636363;
+  padding: .5em .5em .5em .5em;
+  float: right;
+  margin: -8px 0px -6px 0;
+  color: #BAC2C5;
+  font-size: 12px; }
+a.login:hover {
+    color: #EFD700; 
+  }
+a#brand:hover{
+    /*color: #ffd999;*/
+      text-decoration: none;
+  color: #FFD700;
+    text-shadow: -1px 1px 40px #ffc, 1px -1px 40px #fff;
+  -webkit-transition: 500ms linear 0s;
+  -moz-transition: 500ms linear 0s;
+  -o-transition: 500ms linear 0s;
+  transition: 500ms linear 0s;
+  outline: 0 none;
+  }
+/* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
+.description {
+    display:none;
+    position:absolute;
+    border:1px solid #FFF;
+    background-color: green;
+   
+}
+div#pop-up{
+  display: none;
+  position: absolute;
+  background: #eeeeee;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #FFD700;
+  color: red;
+  /*height: 14px;*/
+}
