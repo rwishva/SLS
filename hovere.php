@@ -13,6 +13,7 @@
   #Map .ui-selected { background: #F39814; color: white; }
   #Map { list-style-type: none; margin: 0; padding: 0; width: 450px; }
   #Map area { margin: 0px; padding: 0px; float: left; width: 10px; height: 10px; font-size: 4em; text-align: center; }
+  center {min-width: 1000px;min-height: 1000px;}
   </style>
   <script>
   $(function() {
@@ -21,21 +22,6 @@
   </script>
 </head>
 <body>
- 
-<!-- <ol id="selectable">
-  <li class="ui-state-default">1</li>
-  <li class="ui-state-default">2</li>
-  <li class="ui-state-default">3</li>
-  <li class="ui-state-default">4</li>
-  <li class="ui-state-default">5</li>
-  <li class="ui-state-default">6</li>
-  <li class="ui-state-default">7</li>
-  <li class="ui-state-default">8</li>
-  <li class="ui-state-default">9</li>
-  <li class="ui-state-default">10</li>
-  <li class="ui-state-default">11</li>
-  <li class="ui-state-default">12</li>
-</ol> -->
 
 <center>
             <div class="box">
@@ -43,7 +29,7 @@
               <tr>
                 <!-- <td width="1000px" height="1000px" background="kolla.jpg" valign="top"> -->
                   <!-- <img src="kolla.jpg" width="1001" height="1001" alt="Planets" usemap="#Map"> -->
-                <div id="pixels" style="z-index:-1">
+                <div id="pixels" style="z-index:1">
                   <map name="Map" id="Map">
                     <?php
                     $j = 0;
