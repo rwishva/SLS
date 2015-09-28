@@ -1,3 +1,7 @@
+<?php
+    include("dbmc.php");
+    // session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,19 +38,27 @@
                     <?php
                     $j = 0;
                     $k = 0;
-                    for ($h=0; $h <100 ; $h++) { 
-                      # code...
+                  //   for ($h=0; $h <100 ; $h++) { 
+                  //     # code...
                     
-                  for ($i=0; $i <100 ; $i++) {
-                        $j=$i*10;
-                        $m=$h*10;
-                        $n=($h+1)*10;
-                        $l=($i+1)*10;
-                        $k++;
+                  // for ($i=0; $i <100 ; $i++) {
+                  //       $j=$i*10;
+                  //       $m=$h*10;
+                  //       $n=($h+1)*10;
+                  //       $l=($i+1)*10;
+                  //       $k++;
 
-                    echo "<area onmouseover='d(this)' class='ui-state-default' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."'>";
-                     }
+                  //   echo "<area onmouseover='d(this)' class='ui-state-default' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."'>";
+                  //    }
                     
+                  //   }
+
+                    $get_user_sql = "SELECT * from companies where id=1 LIMIT 1";
+                    $get_user_query = mysqli_query($conn,$get_user_sql);
+                     if(mysqli_num_rows($get_user_query)!=0){
+                      $rs = mysqli_fetch_assoc($get_user_query);
+                      $x1 = $rs['x1'];
+                      echo "<area onmouseover='d(this)' class='ui-state-default' onmouseout='e(this)' shape='rect' coords=".$rs['x1'].",".$rs['y1'].",".$rs['x2'].",".$rs['y2']."' href='".$rs['link']."' title='".($rs['title'])."'>";
                     }
                     ?>
 
