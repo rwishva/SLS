@@ -62,7 +62,7 @@ $(function() {
   var moveLeft = 20;
   var moveDown = 10;
 
-  $('a#trigger').hover(function(e) {
+  $('a.trigger').hover(function(e) {
     $('div#pop-up').show();
       //.css('top', e.pageY + moveDown)
       //.css('left', e.pageX + moveLeft)
@@ -71,7 +71,7 @@ $(function() {
     $('div#pop-up').hide();
   });
 
-  $('a#trigger').mousemove(function(e) {
+  $('a.trigger').mousemove(function(e) {
     $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
   });
 
@@ -86,14 +86,14 @@ $(function() {
     <h1>jQuery Tutorial - Pop-up div on hover</h1>
     <p>
       To show hidden div, simply hover your mouse over
-      <a href="#" id="trigger">this link</a>.
+      <a href="#" class="trigger">this link</a>.
     </p>
 
     <!-- HIDDEN / POP-UP DIV -->
     <div id="pop-up">
    
       <p>
-        This div only appears when the
+        This div only appears when the.........
       </p>
     </div>
 

@@ -104,20 +104,56 @@ a#brand:hover{
     background-color: green;
    
 }
+div#pop-up{
+  display: none;
+  position: absolute;
+  background: #eeeeee;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #FFD700;
+  color: red;
+  /*height: 14px;*/
+}
 
 </style>
-      <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+
+<script type="text/javascript">
+$(function() {
+  var moveLeft = 20;
+  var moveDown = 10;
+
+  $('area.trigger').hover(function(e) {
+    var x = document.getElementsByClassName("trigger");
+    // alert(sTitle);
+    $('div#pop-up').text(sTitle).show();
+    // $('div#pop-up').show();
+      //.css('top', e.pageY + moveDown)
+      //.css('left', e.pageX + moveLeft)
+      //.appendTo('body');
+  }, function() {
+    $('div#pop-up').hide();
+  });
+
+  $('area.trigger').mousemove(function(e) {
+    $("div#pop-up").css('top', e.pageY + moveDown).css('left', e.pageX + moveLeft);
+  });
+
+});
+var sTitle="";
+function d(o) {
+
+  sTitle = o.title;
+}
+function e(o) {
+  sTitle = "";  
+}
+
+    </script>      <!-- <link href="css/style.css" rel="stylesheet"> -->
 
 
 
     </head>
-          <script>
-$(".tiptext").mouseover(function() {
-    $(this).children(".description").show();
-}).mouseout(function() {
-    $(this).children(".description").hide();
-});
-</script>
 
         <body>
           <div id="fb-root"></div>
@@ -200,16 +236,22 @@ $(".tiptext").mouseover(function() {
                         $l=($i+1)*10;
                         $k++;
 
-                    echo "<area onmouseover='d(this)' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title=A:".($k).">";
+                    echo "<area onmouseover='d(this)' class='trigger' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."'>";
                   }
                     
                 }
                     
 
                     ?>
+
                   </map>
 
 
+<div id="pop-up">
+   
+      <p>
+      </p>
+    </div>
 
               </tr>
             </table>
