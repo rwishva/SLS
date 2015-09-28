@@ -107,11 +107,11 @@ a#brand:hover{
 div#pop-up{
   display: none;
   position: absolute;
-  background: #eeeeee;
+  background: black;
   padding: 0;
   margin: 0;
   border: 1px solid #FFD700;
-  color: red;
+  color: #FFD700;
   /*height: 14px;*/
 }
 
