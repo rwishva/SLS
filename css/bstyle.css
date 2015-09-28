@@ -141,19 +141,28 @@
 }
 #gold{
      
-     cursor: pointer;
-    display: inline-block;
-    color: #000;
-    line-height: 1;
-    padding: .6em .8em;
-    background: #FFD700;
-    -webkit-transition: background 0.15s ease, color 0.15s ease;
-    -moz-transition: background 0.15s ease, color 0.15s ease;
-    -ms-transition: background 0.15s ease, color 0.15s ease;
-    -o-transition: background 0.15s ease, color 0.15s ease;
-    border: 1px solid #E0C4A1;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
-    border-radius: 3px;
+        background-color: hsl(38, 100%, 46%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffd999", endColorstr="#ea9400");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffd999), to(#ea9400));
+  background-image: -moz-linear-gradient(top, #ffd999, #ea9400);
+  background-image: -ms-linear-gradient(top, #ffd999, #ea9400);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffd999), color-stop(100%, #ea9400));
+  background-image: -webkit-linear-gradient(top, #ffd999, #ea9400);
+  background-image: -o-linear-gradient(top, #ffd999, #ea9400);
+  background-image: linear-gradient(#ffd999, #ea9400);
+  border-color: #ea9400 #ea9400 hsl(38, 100%, 37.5%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.56);
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  font-size: 12px;
+  /*height: 30px;*/
+  /*padding: 5px;*/
 }
 
+/*#gold.btn.active, #gold.btn:active {
+    background-color: #88650D;
+    border-color: #a88734 #9c7e31 #846a29;
+}*/
 
