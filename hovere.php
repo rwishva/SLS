@@ -31,16 +31,26 @@
     margin-top: 0;
     vertical-align: middle;
 }
+#Map .available { background-image: url("A.png"); }
+#Map .reserved { background-image: url("R.png"); }
+body{
+  background: url(bodybg.gif) repeat #FFFFFF;
+}
   </style>
-  <script>
+<script>
+var selectedpxs = [];
+var pxs;
   $(function() {
     $( "#Map" ).selectable({
       selected: function( event, ui ) {
         // alert( event.pageX)
-        var cars = $(ui.selected).attr('id');
-        
-        fruits.push(cars);
-        console.log(fruits);
+
+        var pxs = $(ui.selected).attr('id');
+        selectedpxs.push(pxs);
+        // selectedpxs.length = 0;
+        // console.log(fruits);
+        // delete fruits;
+        //cars ="";
         // alert();
         // var idlist = $(this).attr('id');
         // alert(idlist);
@@ -48,7 +58,7 @@
     });
   });
 
-var fruits = [];
+
 // var sTitle="";
 // function d(o) {
 //   alert(fruits);
@@ -57,21 +67,39 @@ var fruits = [];
 // function e(o) {
 //   sTitle = "";  
 // }
+function updateselected()
+{
+dataString = selectedpxs ; // array?
+var jsonString = JSON.stringify(dataString);
+   $.ajax({
+        type: "POST",
+        url: "updateselected.php",
+        data: {data : jsonString}, 
+        cache: false,
+        dataType: 'json',
 
-
-
-
-
-  </script>
+        success: function(data){
+            // window.location='millioncompany.php'
+             // var $response=$(data);
+             if(data.type == 'success') {
+                   window.location.href = "pricing.php?pxset=" + data.message;
+                }
+            
+        }
+    });
+}
+</script>
 </head>
 <body>
 
 <center>
+<button type="button" onclick="updateselected()">Reserve</button>
             <div class="box">
               <table>
               <tr>
                 <!-- <td width="1000px" height="1000px" background="kolla.jpg" valign="top"> -->
                   <!-- <img src="kolla.jpg" width="1001" height="1001" alt="Planets" usemap="#Map"> -->
+
                 <div id="pixels" style="z-index:1">
                   <map name="Map" id="Map">
                     <?php
@@ -87,22 +115,30 @@ var fruits = [];
                         $l=($i+1)*10;
                         $k++;
 
-                    echo "<area   class='ui-state-default' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
+                    // echo "<area   class='ui-state-default' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
+                        echo "<area   class='available' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
                      }
                     
                     }
+              /*
                     // for ($i=0; $i < 10 ; $i++) { 
                     //   # code...
                     // echo "<p onmouseover='d()' >fdfd</p>";
 
-                    // $get_user_sql = "SELECT * from companies where id=".$i." LIMIT 1";
+                    // $get_user_sql = "SELECT * from companies where id=".$k." LIMIT 1";
                     // $get_user_query = mysqli_query($conn,$get_user_sql);
-                    //  if(mysqli_num_rows($get_user_query)!=0){
-                    //   $rs = mysqli_fetch_assoc($get_user_query);
-                    //   $x1 = $rs['x1'];
-                    //   echo "<area onmouseover='d(this)' class='ui-state-default' onmouseout='e(this)' shape='rect' coords=".$rs['x1'].",".$rs['y1'].",".$rs['x2'].",".$rs['y2']."' href='".$rs['link']."' title='".($rs['title'])."'>";
+                     // if(mysqli_num_rows($get_user_query)!=0){
+                      // $rs = mysqli_fetch_assoc($get_user_query);
+                      // $x1 = $rs['x1'];
+                      // if($rs['reserved']==1)
+                      // echo "<area onmouseover='d(this)' class='ui-state-default' onmouseout='e(this)' shape='rect' coords=".$rs['x1'].",".$rs['y1'].",".$rs['x2'].",".$rs['y2']."' href='".$rs['link']."' title='".($rs['title'])."'>";
+                      // echo "<area id=".$rs['id']." onmouseover='d(this)' class='reserved' onmouseout='e(this)' shape='rect' coords=".$rs['x1'].",".$rs['y1'].",".$rs['x2'].",".$rs['y2']."' href='".$rs['link']."' title='".($rs['title'])."'>";
+                      // echo "<area id=".$rs['id']." onmouseover='d(this)' class='available' onmouseout='e(this)' shape='rect' coords=".$rs['x1'].",".$rs['y1'].",".$rs['x2'].",".$rs['y2']."' href='".$rs['link']."' title='".($rs['title'])."'>";
                     // }
-                    // }
+                  //   }
+                  // }
+
+              */
                     ?>
 
                   </map>

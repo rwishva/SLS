@@ -22,4 +22,12 @@ function searched_keys($q)
     $return = array($array_count,$final_keys); 
     return $return;
 }
+function selected_pxls($q)
+{
+    $keys = explode(",",$q);
+    $array_count = count(array_filter($keys));
+    $final_keys = array_filter($keys);
+    $return = array($array_count,$final_keys); 
+    return $return;
+}
 ?>
