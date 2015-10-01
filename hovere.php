@@ -115,8 +115,8 @@ var jsonString = JSON.stringify(dataString);
                         $l=($i+1)*10;
                         $k++;
 
-                    // echo "<area   class='ui-state-default' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
-                        echo "<area   class='available' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
+                    echo "<area   class='ui-state-default' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
+                        // echo "<area   class='available' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."' id='".($k)."'>";
                      }
                     
                     }
