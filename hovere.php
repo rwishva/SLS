@@ -99,7 +99,7 @@
 <a href="" class="pull-center">You Have Selected Following Pixels</a>
 <p href="" id="aaa">You Have Selected</p>
   <button class="btn btn-default navbar-btn" id="gold" type="button" onclick="updateselected()">Reserve</button>
-  <button class="btn btn-default navbar-btn" id="gold" type="button" onclick="closebox()">Reset</button>
+  <button class="btn btn-default navbar-btn" id="btnblue" type="button" onclick="closebox()">Reset</button>
   </center>
   
 </div>
@@ -153,7 +153,9 @@
       </div>
   </div>
 </center>
-
+<div class="pixelsel">
+<a href="">Select Pixels you want to reserve</a>
+</div>
 
 <center>
 

@@ -141,3 +141,11 @@
   /*opacity:.80;*/
   filter: alpha(opacity=80);
 }
+.pixelsel{
+  text-align: center;
+  padding: 5px;
+  
+}
+.pixelsel a{
+  text-decoration: none;
+}
