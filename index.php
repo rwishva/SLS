@@ -95,49 +95,34 @@ window.onload = function() {
 
 <div class="row" id="searchbar">
   <div class="col-sm-2 results">
-    <!-- <div class="panel panel-default">
-    <div class="panel-body">
-    <button type="button" class="btn btn-success btn-sm">Small button</button>
-
-    </div>
-  </div> -->
 </div>
+
 <div class="col-sm-6 results">
   <div id="resbox">
     <?php include 'get_results.php' ?>
   </div>
 </div>
-        <div class="col-sm-4 results">
 
-  <!--         <div class="panel panel-default">
-            <div class="panel-body center">
-            
-                
-           <div class="centering text-center pull-right">
-
-      <div class="serp-safety serp-insert">
-        <div class="ui-info-box row stay-safe-box">
-          <div class="col-12">
-          <p><strong>Note :</strong>This site is under construction</p>
-            
-            
-          </div>
-         </div>
-       </div>
+<div class="col-sm-4 results">
+  <div class="container-fluid pull-right">
+    <div class="header_box">
+    <a><strong>Info</strong> :</a>
+    <a>Now You can index your own links on SLS</a>
+      <ul>
+      <li>Get Register</li>
+      <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
+      <li>Click the Golden index button above</li>
+      <li>Continue</li>
+      </ul>
     </div>
-
-
-
-          </div>
-        </div> -->
-        </div>
   </div>
+</div>
+</div>
 
 </div>
-                      </div>
                     
-                    <?php include 'footer.php';?>
-                    </body>
-                    
-            </html>
+<?php include 'footer.php';?>
+</body>
+
+</html>
 
