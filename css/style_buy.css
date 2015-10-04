@@ -1,6 +1,6 @@
 .box {
     background-color: lightgrey;
-    background: url('../img/bodybg.gif') repeat #FFFFFF;
+        background: url('../img/bodybg.gif') repeat #FFFFFF;
     width: 1003px;
     height: 1003px;
     /*padding: 25px;*/
@@ -11,10 +11,9 @@
 }
 #inner{
     width: 700px;
-    height: 900px;
+    height: 700px;
     margin: 25px;
     border: 1px solid #868686;
-    /*text-align: left;*/
 }
 body{
 	background: url('../img/bodybg.gif') repeat #FFFFFF;
@@ -67,8 +66,8 @@ img{
 #inst{
 	color: #E8E8E8;
 	font-weight: 100%;
-	/*margin-top: 100px;*/
-	margin-bottom: 50px;
+	margin-top: 100px;
+	margin-bottom: 100px;
 	font-family: "Times New Roman", Times, serif;
     font-size: 45px;
 
@@ -101,7 +100,7 @@ img{
 }
 a#brand:hover{
     /*color: #ffd999;*/
-  text-decoration: none;
+      text-decoration: none;
   color: #FFD700;
   text-shadow: -1px 1px 40px #ffc, 1px -1px 40px #fff;
   -webkit-transition: 500ms linear 0s;
@@ -110,7 +109,3 @@ a#brand:hover{
   transition: 500ms linear 0s;
   outline: 0 none;
   }
-a.price{
-  color: #FFD700;
-  text-decoration: none;
-}

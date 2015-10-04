@@ -1,10 +1,11 @@
 <html>
     <head>
         
-        <link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
-        <link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
-        <link rel="SHORTCUT ICON" href="fav-2.png">
-        <link rel='stylesheet' type='text/css' href='/SLS/css/style_pricing.css' />
+        <title>Million - Pricing</title>
+        <link href='css/bootstrap.min.css' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+        <link rel="SHORTCUT ICON" href="img/fav-2.png">
+        <link rel='stylesheet' type='text/css' href='css/style_pricing.css' />
 
       <!-- <link href="css/style.css" rel="stylesheet"> -->
     </head>
@@ -48,23 +49,25 @@
                   $pxlcnt = $count[0]*10000;
                   $price = $count[0]*1000;
                   // echo "Congratulations ! You have selected :'".$count[0]*10000."'""dlkflf";
-                  echo "<h1 id='inst'>You have selected : <a class='price'>".$pxlcnt." </a> Pxles</h1>";
+                  echo "<h1 id='inst'>You selected : <a class='price'>".$pxlcnt." </a> Pxles</h1>";
 
-                  echo "<h1 id='inst'>Your Cost is : <a class='price'>".$price."</a> Rs</h1>";
+                  echo "<h1 id='inst'>Cost is : <a class='price'>".$price."</a> Rs</h1>";
 
                   ?>
                 <h1 id="inst">Call Now : <a class="blink" id="black1"><strong>777-233-223</strong></a></h1>
+                <h1 id="inst">Or pay via</a></h1>
+                <img src="img/ezcash.png"><br>
               </div>
             </div>
 </center>
         	
 
 
-      <nav class="navbar navbar-default navbar-static-bottom" id="footer">
+<nav class="navbar navbar-default navbar-static-bottom" id="footer">
   <div class="container">
-    <center><p class="text-muted credit"><a>Copyright &copy; MillionCompany.lk&#8482; All rights reserved. We are not responsible for the content of external sites. Images featured on homepage are &copy; of their respective owners. </a></p></center>
+    <center><p class="text-muted credit"><a>Copyright &copy; MillionCompany.lk&#8482; All rights reserved.</a></p></center>
   </div>
-</nav>  	
+</nav>	
         </body>
 
 

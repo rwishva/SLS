@@ -6,17 +6,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>MC - Select Pixels</title>
-    <link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
-    <link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
-    <link rel="SHORTCUT ICON" href="fav-2.png">
+    <title>Million - Select Pixels</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+    <link rel="icon" type="image/png" href="img/fav-2.png" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel='stylesheet' type='text/css' href='/SLS/css/style_hove.css' />
+    <link rel='stylesheet' type='text/css' href='css/style_hove.css' />
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 
-  <script>
+<script>
   var selectedpxs = [];
   var pxs;
     $(function() {
@@ -53,43 +53,35 @@
 
     });
 
-  function closebox()
-  {
-    $("#popup_div").dialog("close"); 
-      
-    $( "#Map" ).selectable( "refresh" ); 
+function closebox()
+{
+  $("#popup_div").dialog("close"); 
+  $( "#Map" ).selectable( "refresh" ); 
+}
+
+
+function updateselected()
+{
+  dataString = selectedpxs ; // array?
+  var jsonString = JSON.stringify(dataString);
+  $.ajax({
+  type: "POST",
+  url: "updateselected.php",
+  data: {data : jsonString}, 
+  cache: false,
+  dataType: 'json',
+
+  success: function(data){
+  // window.location='millioncompany.php'
+  // var $response=$(data);
+    if(data.type == 'success') {
+    window.location.href = "pricing.php?pxset=" + data.message;
   }
 
-  // var sTitle="";
-  // function d(o) {
-  //   alert(fruits);
-  //   // sTitle = o.id;
-  // }
-  // function e(o) {
-  //   sTitle = "";  
-  // }
-      function updateselected()
-      {
-      dataString = selectedpxs ; // array?
-      var jsonString = JSON.stringify(dataString);
-         $.ajax({
-              type: "POST",
-              url: "updateselected.php",
-              data: {data : jsonString}, 
-              cache: false,
-              dataType: 'json',
-
-              success: function(data){
-                  // window.location='millioncompany.php'
-                   // var $response=$(data);
-                   if(data.type == 'success') {
-                         window.location.href = "pricing.php?pxset=" + data.message;
-                      }
-                  
-              }
-          });
-      }
-  </script>
+  }
+  });
+}
+</script>
 </head>
 <body>
 
@@ -98,7 +90,7 @@
 <center>
 <a href="" class="pull-center">You Have Selected Following Pixels</a>
 <p href="" id="aaa">You Have Selected</p>
-  <button class="btn btn-default navbar-btn" id="gold" type="button" onclick="updateselected()">Reserve</button>
+  
   <button class="btn btn-default navbar-btn" id="btnblue" type="button" onclick="closebox()">Reset</button>
   </center>
   
@@ -155,6 +147,7 @@
 </center>
 <div class="pixelsel">
 <a href="">Select Pixels you want to reserve</a>
+<button class="btn btn-default navbar-btn" id="gold" type="button" onclick="updateselected()">Reserve</button>
 </div>
 
 <center>
@@ -212,7 +205,11 @@
             </table>
           </div>
         </center>
- 
+<nav class="navbar navbar-default navbar-static-bottom" id="footer">
+  <div class="container">
+    <center><p class="text-muted credit"><a>Copyright &copy; MillionCompany.lk&#8482; All rights reserved.</a></p></center>
+  </div>
+</nav> 
  
 </body>
 </html>

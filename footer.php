@@ -1,5 +1,6 @@
-<nav class="navbar navbar-default navbar-static-bottom" id="footer">
+<nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
   <div class="container">
-    <p class="text-muted credit"><a>Copyright &copy; <?php date('Y'); ?> srigle.lk</a></p>
+  	<center><p class="text-muted credit"><a>Copyright &copy; <?php date('Y'); ?> srigle.lk</a></p></center>
+    
   </div>
 </nav>

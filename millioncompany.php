@@ -1,120 +1,31 @@
 <html>
     <head>
-        
-        <link href='/SLS/css/bootstrap.min.css' rel='stylesheet'>
-        <link rel='stylesheet' type='text/css' href='/SLS/css/bstyle.css' />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="SHORTCUT ICON" href="fav-2.png">
-<style>
-  .box {
-      background-color: lightgrey;
-      background: url(bodybg.gif) repeat #FFFFFF;
-      width: 1003px;
-      height: 1003px;
-      /*padding: 25px;*/
-      border: 1px solid #BABABB;
-      margin: 25px;
-      margin-top: 0;
-      vertical-align: middle;
-  }
-  body{
-  	background: url(bodybg.gif) repeat #FFFFFF;
-  }
-  .SLS{
-  	background-color: black;
-  }
-  #indexbtn {
-      cursor: pointer;
-      display: inline-block;
-      color: #fff;
-      line-height: 1;
-      padding: .6em .8em;
-      background: #009afd;
-      -webkit-transition: background 0.15s ease, color 0.15s ease;
-      -moz-transition: background 0.15s ease, color 0.15s ease;
-      -ms-transition: background 0.15s ease, color 0.15s ease;
-      -o-transition: background 0.15s ease, color 0.15s ease;
-      border: 1px solid #1777b7;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset,0 1px 1px rgba(100,100,100,0.3);
-      border-radius: 3px;
+        <title>MillionCompany - Srilankan Companies in pixels</title>
+        <link href='css/bootstrap.min.css' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+        <link rel='stylesheet' type='text/css' href='css/bstyle_main.css' />
+        <script src="js/jquery.min.js"></script>
+        <!-- <link rel="icon" type="image/png" href="img/fav-2.png" /> -->
 
-    }
-  #describe{
-    	color: white;
-    }
-    a{
-    	color: #FFD700;
-    }
-    #footer{
-    	    margin-bottom: 0;
-    	    height: 10px;
-    	    min-height: 10px;
-    	    background-color: transparent;	
-    }
-    #footer a{
-    	color: #BABABB;
-    }
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
-  table, th, td {
-      border: 1px solid #8E8E8E;
-  }
-  tr{
-    height: 10px;
-  }
-  #pixl{
-    position: relative;
-    clip: rect(5, 1, 5, 1);
-    border: none;
-    float: left;
-    
-  }
-  #FAQ
-  {
-    margin-top: -5px;
-    margin-right: 5px;
-  }
 
-  a.login {
-    text-decoration: none;
-    background: #636363;
-    padding: .5em .5em .5em .5em;
-    float: right;
-    margin: -8px 0px -6px 0;
-    color: #BAC2C5;
-    font-size: 12px; }
-  a.login:hover {
-      color: #EFD700; 
-    }
-  a#brand:hover{
-      /*color: #ffd999;*/
-        text-decoration: none;
-    color: #FFD700;
-      text-shadow: -1px 1px 40px #ffc, 1px -1px 40px #fff;
-    -webkit-transition: 500ms linear 0s;
-    -moz-transition: 500ms linear 0s;
-    -o-transition: 500ms linear 0s;
-    transition: 500ms linear 0s;
-    outline: 0 none;
-    }
-  /* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
-  .description {
-      display:none;
-      position:absolute;
-      border:1px solid #FFF;
-      background-color: green;
-     
-  }
-  div#pop-up{
-    display: none;
-    position: absolute;
-    background: black;
-    padding: 0;
-    margin: 0;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-    /*height: 14px;*/
-  }
-</style>
 
 
 <script type="text/javascript">
@@ -148,7 +59,7 @@ function e(o) {
   sTitle = "";  
 }
 
-    </script>      <!-- <link href="css/style.css" rel="stylesheet"> -->
+</script>      <!-- <link href="css/style.css" rel="stylesheet"> -->
 
 
 
@@ -191,7 +102,7 @@ function e(o) {
             <button type="submit" class="btn btn-default navbar-btn pull-right" id="gold">Own My Space</button>
           </form>
           <!-- <p class="navbar-text">SLS Is Best Search</p> -->
-        <!-- <div class="fb-like" data-href="https://www.facebook.com/kollalk" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div> -->
+        <div class="fb-like" data-href="https://www.facebook.com/MillionCompany-1637990863109674/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
           
         </div><!-- /.navbar-collapse -->
       </div>
@@ -220,22 +131,23 @@ function e(o) {
     <table>
       <tr>
                                   <!-- <td width="1000px" height="1000px" background="kolla.jpg" valign="top"> -->
-        <img src="kolla.jpg" width="1001" height="1001" alt="Planets" usemap="#Map">
+        <img src="img/map1.jpg" width="1001" height="1001" alt="Planets" usemap="#Map">
           <div id="pixels" style="z-index:1">
             <map name="Map" id="Map">
               <?php
-                $j = 0;
-                $k = 0;
-                for ($h=0; $h <100 ; $h++) {                                      
-                  for ($i=0; $i <100 ; $i++) {
-                    $j=$i*10;
-                    $m=$h*10;
-                    $n=($h+1)*10;
-                    $l=($i+1)*10;
-                    $k++;
-                    echo "<area onmouseover='d(this)' class='trigger' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."'>";
-                  }                                      
-                }
+              include('get_companies.php');
+                // $j = 0;
+                // $k = 0;
+                // for ($h=0; $h <100 ; $h++) {                                      
+                //   for ($i=0; $i <100 ; $i++) {
+                //     $j=$i*10;
+                //     $m=$h*10;
+                //     $n=($h+1)*10;
+                //     $l=($i+1)*10;
+                //     $k++;
+                //     echo "<area onmouseover='d(this)' class='trigger' onmouseout='e(this)' shape='rect' coords=".$j.",".$m.",".$l.",".$n."' href='#' title='MillionCompany:".($k)."'>";
+                //   }                                      
+                // }
               ?>
             </map>
 

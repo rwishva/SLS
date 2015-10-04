@@ -30,44 +30,44 @@
             //     die;
             // }
 
-          //  $blah = parse_url($link);
-//            $scheme = $blah['scheme'];
-//            $host = $blah['host'];
-//            $path = $blah['path'];
+           $blah = parse_url($link);
+           $scheme = $blah['scheme'];
+           $host = $blah['host'];
+           $path = $blah['path'];
            
             #print_r($blah);
            // $time = date('Y-m-d H:i:s');
            
          
-        // $indexed  = $client->index([
-//         'index' => $index,
-//         'type' => $type,
-//         'body' => [
-//         'user' => $user,
-//         'ip' => $ip,
-//         'tittle' => $tittle,
-//         'link' => $link,
-//         'scheme' => $scheme,
-//         'host' => $host,
-//         'path' => $path,
-//         'description' =>  $description,
-//         'keywords' => $keywords
-//         ] 
-//         ]);
+        $indexed  = $client->index([
+        'index' => $index,
+        'type' => $type,
+        'body' => [
+        'user' => $user,
+        'ip' => $ip,
+        'tittle' => $tittle,
+        'link' => $link,
+        'scheme' => $scheme,
+        'host' => $host,
+        'path' => $path,
+        'description' =>  $description,
+        'keywords' => $keywords
+        ] 
+        ]);
          
          
-           $indexed  = $client->index([
-         'index' => $index,
-         'type' => $type,
-         'body' => [
-         'user' => $user,
-         'ip' => $ip,
-         'tittle' => $tittle,
-         'link' => $link,
-         'description' =>  $description,
-         'keywords' => $keywords
-         ] 
-         ]);
+         //   $indexed  = $client->index([
+         // 'index' => $index,
+         // 'type' => $type,
+         // 'body' => [
+         // 'user' => $user,
+         // 'ip' => $ip,
+         // 'tittle' => $tittle,
+         // 'link' => $link,
+         // 'description' =>  $description,
+         // 'keywords' => $keywords
+         // ] 
+         // ]);
          
          
          if($indexed){
