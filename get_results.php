@@ -105,8 +105,8 @@
                    $took = $took/1000;
                    
                    echo "<div class='results'>";   
-                   // echo '<pre>', print_r($response), '</pre>';
-                   // die;
+                   echo '<pre>', print_r($response), '</pre>';
+                   die;
                    
                    if($results_count<10){
                    echo "<a style='color: #808080'>First ".$results_count." of ".$results_count." results (".$took." seconds)</a>";

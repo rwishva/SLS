@@ -11,6 +11,10 @@
 	/*outline: 1px solid #000000;*/
   /*border: 1px dotted #cfcfcf;*/
 }
+.aligning{
+  /*padding-left: 5px;*/
+  text-align: center;
+}
 #searchbox{
 	margin-top: 5px;
     padding: 2px;
@@ -18,7 +22,7 @@
     /*text-align: -webkit-center;*/
     float: left;
     /*margin-left: 100px;*/
-    width: 150%;
+    width: 199%;
     
 }
 #usr{
@@ -56,11 +60,14 @@
 
 #footer {
   height: 20px;
+  margin-top: -20px;
   background-color: #f5f5f5;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0px -8px 6px -6px #E6E6E6;
   text-decoration: none;
+  position: relative;
+  bottom: 0;
 }
 #footer,#footer a:hover{
   padding: 10px;
@@ -261,5 +268,9 @@ a#res{
 }
 #info_box{
   margin-top: 2%;
+}
+#resbar{
+      min-height: 100%;
+      margin-bottom: 5%;
 }
 

@@ -28,7 +28,7 @@ function showResult(str) {
   xmlhttp.onreadystatechange=function() {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
       document.getElementById("resbox").innerHTML=xmlhttp.responseText;
-      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+      // document.getElementById("resbox").style.border="1px solid #A5ACB2";
     }
   }
   xmlhttp.open("GET","get_results.php?idx=no&q="+str,true);
@@ -53,9 +53,9 @@ window.onload = function() {
  <div class="container-fluid">
 
    <div class="row" id="searchbar">
-    <div class="col-sm-2">
+    <div class="col-sm-1">
     </div>
-      <div class="col-sm-6">
+      <div class="col-sm-5">
         <form>
           <div class="centering text-center" id="searchbox">
 
@@ -76,14 +76,14 @@ window.onload = function() {
 
 
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6 aligning">
       
         <!--   <form action="add.php">
             <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
           </form> -->
 
           <form action="add.php">
-            <button type="submit" class="btn btn-default navbar-btn center" id="gold"><strong>Index Your Links</strong></button>
+            <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
           </form>
 
 
@@ -93,18 +93,18 @@ window.onload = function() {
       
   </div>
 
-<div class="row" id="searchbar">
-  <div class="col-sm-2 results">
+<div class="row" id="resbar">
+  <div class="col-sm-1 results">
 </div>
 
-<div class="col-sm-6 results">
+<div class="col-sm-5 results">
   <div id="resbox">
     <?php include 'get_results.php' ?>
   </div>
 </div>
 
-<div class="col-sm-4 results">
-  <div class="container-fluid pull-right">
+<div class="col-sm-6 results">
+  <div class="container-fluid pull-center">
     <div class="header_box">
     <a><strong>Info</strong> :</a>
     <a>Now You can index your own links on SLS</a>
