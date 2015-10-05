@@ -54,6 +54,11 @@
         'keywords' => $keywords
         ] 
         ]);
+
+        // "postDate" : {
+        //         "type" : "date",
+        //         "format" : "YYYY-MM-dd mm:hh:ss"
+        //     }
          
          
          //   $indexed  = $client->index([
