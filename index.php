@@ -104,6 +104,7 @@ window.onload = function() {
 </div>
 
 <div class="col-sm-6 results">
+  <div class="row">
   <div class="container-fluid pull-center">
     <div class="header_box">
     <a><strong>Info</strong> :</a>
@@ -116,6 +117,29 @@ window.onload = function() {
       </ul>
     </div>
   </div>
+<br>
+<br>
+<div class="login1">
+    <form name="form1" method="post">
+        <table>
+            <tr>
+                <td>Username :</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>Password :</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;"><input type="submit" id=addbtn value="SignIn" name="loginsub"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
+</div>
 </div>
 </div>
 
