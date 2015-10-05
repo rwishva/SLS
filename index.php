@@ -131,7 +131,7 @@ window.onload = function() {
                 <td><input type="password" name="pwd"></td>
             </tr>
             <tr>
-                <td style="text-align: right;"><input type="submit" id=addbtn value="SignIn" name="loginsub"></td>
+                <td class="pull-right"><button>signin</button></td>
             </tr>
         </table>
     </form>
