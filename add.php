@@ -91,7 +91,7 @@ $(document).ready(function() {
 
       <div class="col-sm-5 outline">
         <div id="resbox">
-          <form class="form-horizontal outline" id="addform" action="insert_index.php">
+          <form class="form-horizontal outline bordershadow" id="addform" action="insert_index.php">
                         <fieldset>
 
                         <!-- Form Name -->

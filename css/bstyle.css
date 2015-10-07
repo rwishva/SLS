@@ -9,7 +9,7 @@
 }
 .outline{
   /*outline: 1px solid #000000;*/
-  border: 1px dotted #cfcfcf;
+  /*border: 1px dotted #cfcfcf;*/
   min-height: 50px;
 }
 .nopad{
@@ -284,4 +284,23 @@ a#res{
 .notice{
   padding: 0;
   margin-bottom: 20px;
+}
+#addform{
+  padding: 20px;
+}
+.bordershadow{
+  border: 1px dotted #cfcfcf;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+        box-shadow: 0 9px 12px -6px #E6E6E6;
+}
+#img{
+    height: 5%;
+    width: 100%;
+    padding-top: 10;
+}
+#msg{
+    /*height: 5%;*/
+    width: 100%;
+    padding-top: 10; 
 }

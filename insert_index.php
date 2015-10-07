@@ -30,10 +30,16 @@
             //     die;
             // }
 
-           $blah = parse_url($link);
-           $scheme = $blah['scheme'];
-           $host = $blah['host'];
-           $path = $blah['path'];
+       $decoded_url = parse_url($link);
+       if(!isset($decoded_url['scheme']))
+       {
+        $return = array('type'=>'error', 'message'=>'Sorry ! , Plese provide a valid link');
+        echo json_encode($return);
+        die;
+       }
+       $scheme = $decoded_url['scheme'];
+       $host = $decoded_url['host'];
+       $path = $decoded_url['path'];
            
             #print_r($blah);
            // $time = date('Y-m-d H:i:s');
