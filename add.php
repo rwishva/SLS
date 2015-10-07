@@ -18,7 +18,7 @@ if (!isset($_SESSION['luser'])) {
 $(document).ready(function() {
     $('#addform').submit(function() {
         //event.preventDefault();
-        var status = '<img id="img" class="loading" src="loading-2.gif" alt="Loading..." />';
+        var status = '<img id="img" class="loading" src="img/loading-2.gif" alt="Loading..." />';
         $("#ajax").after(status);
         $.ajax({
             type: 'POST',
@@ -44,36 +44,54 @@ $(document).ready(function() {
 </head>
 <body>
                 <?php include 'header.php';?>
-                
+        
+<div class="container-fluid">
 
-                <div class='container-fluid' id='indexit'>
-                  <div class='row-fluid'>
-                    <div class='centering text-center'>
-                    <div class="col-sm-2 boxborder"></div>
-                      <div class="col-sm-6 boxborder" id="index_box">
-                      <!-- <div id="title"><h1>SLS</h1></div> -->
-                      <!-- <form action="insert_index.php" name="form1" method="post" id="addform">
-                        <label>Title
-                        <br>
-                        <input type="text" name="title" required><br>
-                        </label>
-                        <br>
-                        <label>Link
-                        <input type="text" name="link" required><br>
-                        </label>
-                        <br>
-                        <label>Description <br>
-                        <textarea name="description" rows="8" required></textarea><br>
-                        </label>
-                        <br>
-                        <label>Keywords<br>
-                        <input type="text" name="keywords" placeholder="Comma, seperated" required><br>
-                        </label>
-                        <br>
-                        <input type=submit  id=addbtn value="Index">
-                        <span id="ajax"></span>
-                    </form> -->
-                      <form class="form-horizontal" id="addform" action="insert_index.php">
+    <div class="row outline" id="searchbar">
+      <div class="col-sm-1 outline">
+      </div>
+
+      <div class="col-sm-5 outline">
+        <form>
+          <div class="centering text-center" id="searchbox">
+              <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input id="query" type="text" class="form-control"  placeholder="Search" name="q" onkeyup="showResult(this.value)">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <!-- <span class="search-ico"></span> -->
+                            <img src="img/sico.png" style="width:20px; height:20px;">
+                        </button>  
+                    </span>
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-sm-6 outline">
+        <div class="row outline">
+          <div class="col-sm-1">
+            <div class="container-fluid nopad">
+          <!--   <form action="add.php">
+              <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
+            </form> -->
+            <!-- <form action="add.php">
+              <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
+            </form> -->
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+
+    <div class="row" id="resbar">
+      <div class="col-sm-1 outline">
+      </div>
+
+      <div class="col-sm-5 outline">
+        <div id="resbox">
+          <form class="form-horizontal outline" id="addform" action="insert_index.php">
                         <fieldset>
 
                         <!-- Form Name -->
@@ -128,50 +146,32 @@ $(document).ready(function() {
                         </div>
                         </fieldset>
                     </form>
+        </div>
+      </div>
 
+      <div class="col-sm-6 outline">
+        <div class="row">
+          <div class="col-sm-1">
+            <div class="container-fluid pull-center notice">
+              <div class="header_box">
+                <a><strong>Info</strong> :</a>
+                <a>More you accurate more they reach</a>
+                <ul>
+                  <li>Add a correct title</li>
+                  <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
+                  <li>Small description about content</li>
+                  <li>Add correct tags, this will help to search easily</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-
-                    </div>
-                    <div class="col-sm-4 boxborder" id="info_box">
-                      <div class="container-fluid pull-right">
-                  <div class="header_box">
-                    <a><strong>Info</strong> :</a>
-                    <a>More you accurate more they reach</a>
-                    <ul>
-                      <li>Add a correct title</li>
-                      <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
-                      <li>Small description about content</li>
-                      <li>Add correct tags, this will help to search easily</li>
-                    </ul>
-                  </div>
-                </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-
-
-
-                
-                <div class="center"></div>
-                <div class="center" id=ad>
-                <div id="msg"></div>
-                </div>
-
-
-<!--                 <div class="jumbotron">
-  <div class="container">
-   <h1>Hello, world!</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="/SLS" role="button">Learn more</a></p>
   </div>
+  <div id="msg"></div>
 </div>
-
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src="//www.youtube.com/watch?v=gO6cFMRqXqU"></iframe>
-</div> -->
 
 
                 <?php include 'footer.php';?>

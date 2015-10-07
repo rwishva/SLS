@@ -11,7 +11,7 @@
                       if(isset($_SESSION['luser']))
                       $user = $_SESSION['luser'];   
                        
-                      $index = "srilanka";
+                      $index = "sls";
                       $type = "searches";
                       $keys = explode(" ",$_GET['q']);
                       $keys_count = count($keys);
@@ -29,7 +29,7 @@
                       }
 
                      $params = [
-                            'index' => 'srilanka',
+                            'index' => 'sls',
                             'type' => 'links',
                             'body' => [
                                         'query' => [
@@ -51,14 +51,14 @@
                   else {
 
                       $params = [
-                            'index' => 'srilanka',
+                            'index' => 'sls',
                             'type' => 'links',
                             'body' => [
                                         'query' => [
                                             'bool' => [ 
                                                 'should' => [ 
-                                                               // ['match' => ['_all' => $q]]
-                                    ['match' => ['user' => 'rangana']],
+                                                               ['match' => ['_all' => $q]]
+                                    // ['match' => ['user' => 'rangana']],
                                     //['match' => ['title' => $q]]
                                       ]
                                   ]
@@ -71,7 +71,7 @@
                else {
 
                       $params = [
-                            'index' => 'srilanka',
+                            'index' => 'sls',
                             'type' => 'links',
                             'body' => [
                                         'query' => [
@@ -93,7 +93,7 @@
                   #$params = "['index' => 'srilanka','type' => 'links','body' => ['query' => ['bool' => [ 'should' => [['match' => ['_all' => 'this']],['match' => ['_all' => 'is']],['match' => ['_all' => 'fuck']]]]]]]";
                   #echo $params;
                   $response = $client->search($params);
-                  header("content-type: text/html; charset=UTF-8");  
+                  // header("content-type: text/html; charset=UTF-8");  
                    echo "<div id='title'>";
                    // echo "<a id='res' style='text-decoration: none'>Results From CC</a>";
                    echo "</div>";
@@ -105,7 +105,7 @@
                    $took = $took/1000;
                    
                    echo "<div class='results'>";   
-                   // echo '<pre>', print_r($response), '</pre>';
+                   echo '<pre>', print_r($response), '</pre>';
                    // die;
                    
                    if($results_count<10){

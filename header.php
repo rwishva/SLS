@@ -31,7 +31,7 @@ else
       <form action="login.php">
       <button type="submit" class="btn btn-default navbar-btn pull-right" >Sign in</button>
        
-      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link"><?php echo ucfirst($username); ?></a></p>
+      <p class="navbar-text pull-right"><a href="#" class="navbar-link"><?php echo ucfirst($username); ?></a></p>
       </form>
       <!-- <p class="navbar-text">SLS Is Best Search</p> -->
     

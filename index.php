@@ -1,6 +1,6 @@
 <?php
     session_start();
-  header("content-type: text/html; charset=UTF-8");    
+    header("content-type: text/html; charset=UTF-8");    
     
     // require 'validatesession.php';
            
@@ -11,6 +11,7 @@
         
         <link href='css/bootstrap.min.css' rel='stylesheet'>
         <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+        <link rel='stylesheet' type='text/css' href='css/style_sign.css' />
       <!-- <link href="css/style.css" rel="stylesheet"> -->
 <script>
 function showResult(str) {
@@ -42,110 +43,104 @@ window.onload = function() {
 };
     </script>
 
-    </head>
+</head>
  
-        <body>
+<body>
                 
-                <?php include 'header.php';?>
+<?php include 'header.php';?>
 
+  <div class="container-fluid">
 
+    <div class="row outline" id="searchbar">
+      <div class="col-sm-1 outline">
+      </div>
 
- <div class="container-fluid">
-
-   <div class="row" id="searchbar">
-    <div class="col-sm-1">
-    </div>
-      <div class="col-sm-5">
+      <div class="col-sm-5 outline">
         <form>
           <div class="centering text-center" id="searchbox">
+              <div id="imaginary_container"> 
+                <div class="input-group stylish-input-group">
+                    <input id="query" type="text" class="form-control"  placeholder="Search" name="q" onkeyup="showResult(this.value)">
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <!-- <span class="search-ico"></span> -->
+                            <img src="img/sico.png" style="width:20px; height:20px;">
+                        </button>  
+                    </span>
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
 
-                <div id="imaginary_container"> 
-                        <div class="input-group stylish-input-group">
-                            <input id="query" type="text" class="form-control"  placeholder="Search" name="q" onkeyup="showResult(this.value)">
-                            <span class="input-group-addon">
-                                <button type="submit">
-                                    <!-- <span class="search-ico"></span> -->
-                                    <img src="img/sico.png" style="width:20px; height:20px;">
-                                </button>  
-                            </span>
-                        </div>
-                    </div>
+      <div class="col-sm-6 outline">
+        <div class="row outline">
+          <div class="col-sm-1">
+            <div class="container-fluid nopad">
+          <!--   <form action="add.php">
+              <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
+            </form> -->
+            <form action="add.php">
+              <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
+            </form>
+            </div>
+          </div>
         </div>
+      </div>      
+    </div>
+
+    <div class="row" id="resbar">
+      <div class="col-sm-1 outline">
+      </div>
+
+      <div class="col-sm-5 outline">
+        <div id="resbox">
+          <?php include 'get_results.php' ?>
+        </div>
+      </div>
+
+      <div class="col-sm-6 outline">
+        <div class="row">
+        <div class="col-sm-1">
+        <div class="container-fluid pull-center notice">
+          <div class="header_box">
+          <a><strong>Info</strong> :</a>
+          <a>Now You can index your own links on SLS</a>
+            <ul>
+            <li>Get Register</li>
+            <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
+            <li>Click the Golden index button above</li>
+            <li>Continue</li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- <div class="login1">
+          <form class="form-1">
+        <p class="field">
+          <input type="text" name="login" placeholder="Username or email">
+          <i class="icon-user icon-large"></i>
+        </p>
+          <p class="field">
+            <input type="password" name="password" placeholder="Password">
+            <i class="icon-lock icon-large"></i>
+        </p>        
+        <p class="submit">
+            <button type="submit" name="submit"><i class="icon-arrow-right icon-large">Sign in</i></button>
+        </p>
       </form>
+      </div> -->
 
 
-
+      </div>
+      </div>
+      </div>
     </div>
-    <div class="col-sm-6 aligning">
-      
-        <!--   <form action="add.php">
-            <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
-          </form> -->
 
-          <form action="add.php">
-            <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
-          </form>
-
-
-
-
-    </div>
-      
   </div>
-
-<div class="row" id="resbar">
-  <div class="col-sm-1 results">
-</div>
-
-<div class="col-sm-5 results">
-  <div id="resbox">
-    <?php include 'get_results.php' ?>
-  </div>
-</div>
-
-<div class="col-sm-6 results">
-  <div class="row">
-  <div class="container-fluid pull-center">
-    <div class="header_box">
-    <a><strong>Info</strong> :</a>
-    <a>Now You can index your own links on SLS</a>
-      <ul>
-      <li>Get Register</li>
-      <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
-      <li>Click the Golden index button above</li>
-      <li>Continue</li>
-      </ul>
-    </div>
-  </div>
-<br>
-<br>
-<div class="login1">
-    <form name="form1" method="post">
-        <table>
-            <tr>
-                <td>Username :</td>
-                <td><input type="text" name="username"></td>
-            </tr>
-            <tr>
-                <td>Password :</td>
-                <td><input type="password" name="pwd"></td>
-            </tr>
-            <tr>
-                <td class="pull-right"><button>signin</button></td>
-            </tr>
-        </table>
-    </form>
-</div>
-
-
-
-</div>
-</div>
-</div>
-
-</div>
                     
 <?php include 'footer.php';?>
+
 </body>
 
 </html>

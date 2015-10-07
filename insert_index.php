@@ -17,7 +17,7 @@
             $keywords = explode(',',$_POST['keywords']);
             $ip = $_SERVER['REMOTE_ADDR'];
             $user = $_SESSION['luser'];
-            $index = "srilanka";
+            $index = "sls";
             $type = "links";
             
 
