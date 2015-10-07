@@ -33,7 +33,7 @@
        $decoded_url = parse_url($link);
        if(!isset($decoded_url['scheme']))
        {
-        $return = array('type'=>'error', 'message'=>'Sorry ! , Plese provide a valid link');
+        $return = array('type'=>'error', 'message'=>'Sorry ! , Please provide a valid link');
         echo json_encode($return);
         die;
        }
