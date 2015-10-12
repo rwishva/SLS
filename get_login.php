@@ -1,6 +1,7 @@
 <?php
     // include("db.php");
     session_start();
+    usleep(5000000);
     // echo $_POST['password'];
     if (!empty($_POST))
     {
@@ -12,7 +13,7 @@
         // if(mysqli_num_rows($get_user_query)!=0){
         // $rs = mysqli_fetch_assoc($get_user_query);
         $rs['email'] = "rangana";
-        $rs['passwd'] = "123456";
+        $rs['passwd'] = "aaa";
         if ($rs['email']==$v3 && $rs['passwd']==$v4)
         {
             echo "true";

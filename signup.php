@@ -65,7 +65,7 @@
         <center>
             <div class="signup-ui bordershadow">
                 <center>
-                    <div class="signup-align bordershadow">
+                    <div class="signup-align">
                         <form name="loginsub" method="post">
                             <table class="tbl-login">
                                 <tbody>
@@ -116,7 +116,7 @@
                                 </tbody>
                             </table>
                         </form>
-                        By registering, you agree to the privacy policy and terms of service.
+                        By registering, you agree to the <a>privacy policy</a> and <a>terms of service.</a>
                     </div>
                 </center>
                 

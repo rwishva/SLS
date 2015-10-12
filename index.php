@@ -68,8 +68,9 @@
          },
          beforeSend:function()
          {
-        $("#add_err").css('display', 'inline', 'important');
-        $("#add_err").html("<img src='images/ajax-loader.gif' /> Loading...")
+         // $("#add_err").delay( 100000 );
+
+        $("#loading-img").html("<img id='img-login' src='img/loading-2.gif' />")
          }
         });
       return false;
@@ -82,7 +83,7 @@
 <body>
                 
 <?php include 'header.php';?>
-<div id="add_err"></div>
+<div id="loading-img"></div>
   <div class="container-fluid">
 
     <div class="row outline" id="searchbar">

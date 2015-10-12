@@ -2,7 +2,7 @@
 
     session_start();
     require_once 'init.php';
-    usleep(1);
+    usleep(5000000);
 
     if(!empty($_POST))
     {

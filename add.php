@@ -18,8 +18,8 @@ if (!isset($_SESSION['luser'])) {
 $(document).ready(function() {
     $('#addform').submit(function() {
         //event.preventDefault();
-        var status = '<img id="img" class="loading" src="img/loading-2.gif" alt="Loading..." />';
-        $("#ajax").after(status);
+        var status = '<img id="img-login" class="loading" src="img/loading-2.gif" alt="Loading..." />';
+        $("#loading-img").after(status);
         $.ajax({
             type: 'POST',
             url: $(this).attr('action'),
@@ -44,7 +44,7 @@ $(document).ready(function() {
 </head>
 <body>
 <?php include 'header.php';?>
-        
+<span id="loading-img"></span>        
 <div class="container-fluid">
 
     <div class="row outline" id="searchbar">
@@ -138,7 +138,6 @@ $(document).ready(function() {
                           <label class="control-label" for="submit"></label>
                           <div class="controls">
                             <button id="btn-red" name="submit" type="submit" class="btn btn-success">Index</button>
-                            <span id="ajax"></span>
                             <p id="msg"></p>
                           </div>
                         </div>

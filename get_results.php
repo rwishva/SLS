@@ -129,9 +129,9 @@
                           echo "<br>";
                           }   
 
-                          echo "<a class='description' style='color: #545454'>".$r['_source']['description']."</a>";
-                          echo "<br>";
-                          echo "<a class='keywords' style='color: #545454'>Tags :".implode(', ',$r['_source']['keywords'])."</a>";
+                          echo "<p class='description' style='color: #545454'>".$r['_source']['description']."</p>";
+                          // echo "<br>";
+                          echo "<a class='keywords' style='color: #545454'>Tags :<span class='label label-info'>".implode(',',$r['_source']['keywords'])."</label></a>";
                           echo "<br>";
                           echo "<br>";
                    }

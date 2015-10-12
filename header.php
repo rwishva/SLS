@@ -19,8 +19,8 @@ else
 
 <nav class="navbar SLS">
   <div class="container-fluid head-contain">
-    <div class="row-fluid">
-      <div class="navbar-header">
+    <div class="row-fluid nav-middle">
+      <div class="navbar-header nav-middle">
         <a class="navbar-brand nav-middle" href="/SLS/">SLS</a>
       </div>
       <?php 
