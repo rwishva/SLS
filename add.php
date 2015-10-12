@@ -9,7 +9,9 @@ if (!isset($_SESSION['luser'])) {
 <html>
 <head>
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap-tagsinput.min.js"></script>
 <link href='css/bootstrap.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
 <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
 <script src="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.min.js"></script>
 
@@ -29,12 +31,14 @@ $(document).ready(function() {
                 $("#addform")[0].reset();
                 if(json.type == 'success') {
                     $('#msg').css("color","green").html(json.message);
+                    $("#notice-box").after("yes");
                 } else if(json.type == 'warning'){
                     $('#msg').css("color","yellow").html(json.message);
                 } else if(json.type == 'error'){
                     $('#msg').css("color","red").html(json.message);
                 }
                 $('.loading').remove();
+                
             }
         })
         return false;
@@ -128,7 +132,8 @@ $(document).ready(function() {
                         <div class="control-group">
                           <label class="control-label" for="keywords">Tags</label>
                           <div class="controls">
-                            <input id="keywords" name="keywords" type="text" placeholder="Comma, Seperated" class=" form-control" required="">
+                            <!-- <input id="keywords" name="keywords" type="text" placeholder="Comma, Seperated" class=" form-control" required=""> -->
+                            <input type="text" name="keywords" id="keywords" class="form-control" placeholder="Type and press enter" data-role="tagsinput" />
                             <!-- <input type="text" id="keywords" name="keywords" class="form-control" placeholder="Type your tag and press enter" data-role="tagsinput" /> -->
                           </div>
                         </div>
@@ -166,15 +171,35 @@ $(document).ready(function() {
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <h3>How to Index Correctly</h3>
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+
+
+
+
+
 
   </div>
   <div id="msg"></div>
 </div>
 
+<span><div id="notice-box"></div></span>
 
-   <?php include 'footer.php';?>             
+<?php include 'footer.php';?>             
     </body>
 
 </html>

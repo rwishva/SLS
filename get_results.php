@@ -114,7 +114,8 @@
                    echo "<a style='color: #808080'>First 10 of ".$results_count." results (".$took." seconds)</a>";    
                    }
                    echo "<br>";
-                   echo "<br>"; 
+                   echo "<br>";
+                   echo "<div class='adbox'>this is reserved for adds</div>";
                    foreach($results as $r)
                    {
                           if($r['_source']['link']){

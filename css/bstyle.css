@@ -235,6 +235,7 @@
   color: #ffffff;
   font-size: 14px;
   background: #eb0322;
+  /*background: #0DAD1A;*/
   /*padding: 10px 20px 10px 20px;*/
   text-decoration: none;
   border-radius: 0;
@@ -457,6 +458,7 @@ li span a #wihte{
 .checkbox{
  margin-left: 5px;
  margin-top: 0; 
+ margin-bottom: 0px;
 }
 input[type=checkbox] {
     margin: 0 0 0;
@@ -506,4 +508,32 @@ p.description{
  display: -webkit-box;
  -webkit-line-clamp: 3;
  -webkit-box-orient: vertical;
+}
+.bootstrap-tagsinput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    color: #555;
+    vertical-align: middle;
+    /*border-radius: 4px;*/
+    max-width: 100%;
+    line-height: 22px;
+    cursor: text;
+    width: 100%;
+}
+.adbox{
+  background-color: #ffffcc;
+  border: 1px dotted #cfcfcf;
+  color: #000000;
+  padding: 7px;
+  width: 300px;
+  /*-webkit-box-shadow: 0 8px 6px -6px #999;*/
+  /*-moz-box-shadow: 0 8px 6px -6px #999;*/
+  /*box-shadow: 0 9px 12px -6px #E6E6E6;*/
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 20px;
 }

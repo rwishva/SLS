@@ -74,7 +74,7 @@
                             <center>
                                 <div class="login-ui bordershadow">
                                     <center>
-                                        <form name="loginsub" method="post">
+                                        <form name="loginsub" class="form-middle" method="post">
                                             <table class="tbl-login">
                                                 <tbody>
                                                     <tr>
