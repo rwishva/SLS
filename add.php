@@ -55,7 +55,7 @@ $(document).ready(function() {
       <div class="col-sm-1 outline">
       </div>
 
-      <div class="col-sm-5 outline">
+     <!--  <div class="col-sm-5 outline">
         <form>
           <div class="centering text-center" id="searchbox">
               <div id="imaginary_container"> 
@@ -63,7 +63,6 @@ $(document).ready(function() {
                     <input id="query" type="text" class="form-control"  placeholder="Search" name="q" onkeyup="showResult(this.value)">
                     <span class="input-group-addon">
                         <button type="submit">
-                            <!-- <span class="search-ico"></span> -->
                             <img src="img/sico.png" style="width:20px; height:20px;">
                         </button>  
                     </span>
@@ -71,7 +70,7 @@ $(document).ready(function() {
               </div>
           </div>
         </form>
-      </div>
+      </div> -->
 
       <div class="col-sm-6 outline">
         <div class="row outline">
