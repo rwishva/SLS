@@ -18,25 +18,19 @@ else
 ?>
 
 <nav class="navbar SLS">
-  <div class="container-fluid">
+  <div class="container-fluid head-contain">
     <div class="row-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      
-      <a class="navbar-brand" href="/SLS/">SLS</a>
+      <div class="navbar-header">
+        <a class="navbar-brand nav-middle" href="/SLS/">SLS</a>
+      </div>
+      <?php 
+        if (isset($_SESSION['luser'])){
+          include 'logged-in-header.php';
+          }
+          else{
+           include 'not-logged-header.php'; 
+          }
+      ?>    
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form action="login.php">
-      <button type="submit" class="btn btn-default navbar-btn pull-right" >Sign in</button>
-       
-      <p class="navbar-text pull-right"><a href="#" class="navbar-link"><?php echo ucfirst($username); ?></a></p>
-      </form>
-      <!-- <p class="navbar-text">SLS Is Best Search</p> -->
-    
-      
-    </div><!-- /.navbar-collapse -->
-    </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>

@@ -1,5 +1,34 @@
 <?php
-include_once('simple_html_dom.php');
+$link = "https://www.google.lk/?gfe_rd=cr&ei=GJEWVqiiArDG8AeczLTwCA#q=php+when+die+connection+reset";
+$decoded_url = parse_url($link);
+       if(isset($decoded_url['scheme']))
+       {
+        echo $decoded_url['scheme'];
+        die;
+      }
+      die;
+
+?>
+
+
+
+<!--
+
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='/google/css/style.css' />
+</head>
+    <body> 
+        <form>
+        <input placeholder="Search" id="field" name="field" type="text" />
+
+        <input id="submit" name="submit" type="submit" value="Search" />
+        </form>
+    <body>
+<html>
+  -->
+<!-- 
+  include_once('simple_html_dom.php');
 $default_opts = array(
   'http'=>array(
     'method'=>"GET",
@@ -22,24 +51,4 @@ foreach($sFile->find('img') as $img)
 echo $img->src."<br />";
 //echo "http://php.net".$img."<br/>";
 //echo $img;
-}
-
-?>
-
-
-
-<!--
-
-<html>
-<head>
-<link rel='stylesheet' type='text/css' href='/google/css/style.css' />
-</head>
-    <body> 
-        <form>
-        <input placeholder="Search" id="field" name="field" type="text" />
-
-        <input id="submit" name="submit" type="submit" value="Search" />
-        </form>
-    <body>
-<html>
-  -->
+} -->

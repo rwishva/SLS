@@ -29,25 +29,24 @@
                       }
 
                      $params = [
-                            'index' => 'sls',
-                            'type' => 'links',
-                            'body' => [
-                                        'query' => [
-                                            'bool' => [ 
-                                                'should' => [ 
-                                                                ['match' => ['_all' => $q]]
-                                    //['match' => ['keywords' => $q]],
-                                    //['match' => ['title' => $q]]
-                                ]
-                            ]
-                        ]
-                    ]
-                ];
-
-
-
-
-                 }
+                                  'index' => 'sls',
+                                  'type' => 'links',
+                                  'body' => [
+                                              'query' => 
+                                              [
+                                                  'bool' => 
+                                                  [ 
+                                                    'should' => 
+                                                    [ 
+                                                      ['match' => 
+                                                        ['_all' => $q]
+                                                      ]
+                                                    ]
+                                                  ]      
+                                              ]
+                                            ]
+                                ];
+              }
                   else {
 
                       $params = [
@@ -105,7 +104,7 @@
                    $took = $took/1000;
                    
                    echo "<div class='results'>";   
-                   echo '<pre>', print_r($response), '</pre>';
+                   
                    // die;
                    
                    if($results_count<10){
@@ -136,6 +135,7 @@
                           echo "<br>";
                           echo "<br>";
                    }
+                   echo '<pre>', print_r($response), '</pre>';
                    echo "</div>";
                   }
                   else {

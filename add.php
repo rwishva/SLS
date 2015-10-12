@@ -43,7 +43,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-                <?php include 'header.php';?>
+<?php include 'header.php';?>
         
 <div class="container-fluid">
 
@@ -137,7 +137,7 @@ $(document).ready(function() {
                         <div class="control-group">
                           <label class="control-label" for="submit"></label>
                           <div class="controls">
-                            <button id="gold" name="submit" type="submit" class="btn btn-success">Index</button>
+                            <button id="btn-red" name="submit" type="submit" class="btn btn-success">Index</button>
                             <span id="ajax"></span>
                             <p id="msg"></p>
                           </div>
@@ -149,7 +149,7 @@ $(document).ready(function() {
         </div>
       </div>
 
-      <div class="col-sm-6 outline">
+      <div class="col-sm-6 outline borderl">
         <div class="row">
           <div class="col-sm-1">
             <div class="container-fluid pull-center notice">
@@ -161,6 +161,7 @@ $(document).ready(function() {
                   <li>Paste the link eg:- <strong>http://www.yourlink.lk</strong></li>
                   <li>Small description about content</li>
                   <li>Add correct tags, this will help to search easily</li>
+                  <li><span class="label label-info"><a href="#" id="white">Success</a></span></li>
                 </ul>
               </div>
             </div>
@@ -174,6 +175,7 @@ $(document).ready(function() {
 </div>
 
 
-                <?php include 'footer.php';?>
+   <?php include 'footer.php';?>             
     </body>
+
 </html>
