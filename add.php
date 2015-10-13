@@ -51,38 +51,28 @@ $(document).ready(function() {
 <span id="loading-img"></span>        
 <div class="container-fluid">
 
-    <div class="row outline" id="searchbar">
+    <div class="row outline">
       <div class="col-sm-1 outline">
       </div>
 
-     <!--  <div class="col-sm-5 outline">
-        <form>
-          <div class="centering text-center" id="searchbox">
-              <div id="imaginary_container"> 
-                <div class="input-group stylish-input-group">
-                    <input id="query" type="text" class="form-control"  placeholder="Search" name="q" onkeyup="showResult(this.value)">
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <img src="img/sico.png" style="width:20px; height:20px;">
-                        </button>  
-                    </span>
-                </div>
-              </div>
-          </div>
-        </form>
-      </div> -->
+      <div class="col-sm-10 outline">
+        <center>
+          <h1 id="msg"></h1>
+        </center>
+        
+      </div>
 
-      <div class="col-sm-6 outline">
+      <div class="col-sm-1 outline">
         <div class="row outline">
           <div class="col-sm-1">
-            <div class="container-fluid nopad">
+            <!-- <div class="container-fluid nopad"> -->
           <!--   <form action="add.php">
               <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
             </form> -->
             <!-- <form action="add.php">
               <button type="submit" class="btn btn-default navbar-btn" id="gold"><strong>Index Your Links</strong></button>
             </form> -->
-            </div>
+            <!-- </div> -->
           </div>
         </div>
       </div>      
@@ -180,7 +170,7 @@ $(document).ready(function() {
         </div>
 
         <div class="row">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
               <div class="col-sm-6">
                 <h3>How to Index Correctly</h3>

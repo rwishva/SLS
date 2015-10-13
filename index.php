@@ -155,7 +155,7 @@
       </div>
 
       <div class="row">
-        <div class="container">
+        <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
               <h3>How to Index Correctly</h3>
