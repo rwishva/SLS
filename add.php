@@ -137,6 +137,14 @@ $(document).ready(function() {
                           </div>
                         </div>
 
+                        <div class="input-group">
+                          <div class="input-group">
+                            <label class="radio-inline"><input type="radio" value="video" name="optradio">Video</label>
+                            <label class="radio-inline"><input type="radio" value="image" name="optradio">Image</label>
+                            <label class="radio-inline"><input type="radio" value="link" name="optradio">Link</label>
+                          </div>
+                        </div><!-- /input-group -->
+
                         <!-- Button -->
                         <div class="control-group">
                           <label class="control-label" for="submit"></label>
@@ -177,7 +185,7 @@ $(document).ready(function() {
               <div class="col-sm-6">
                 <h3>How to Index Correctly</h3>
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                    <iframe class="embed-responsive-item vidshadow" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
                   </div>
               </div>
             </div>

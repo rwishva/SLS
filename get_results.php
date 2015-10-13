@@ -46,6 +46,18 @@
                                               ]
                                             ]
                                 ];
+
+                                // $params = [
+                                //   'index' => 'sls',
+                                //   'type' => 'links',
+                                //   'body' => [
+                                //               'filtered'=> [
+                                //                   'query'=> [
+                                //                               'match_all'=> []
+                                //                             ]
+                                //                   ] 
+                                //                 ]
+                                //               ];
               }
                   else {
 
@@ -115,15 +127,27 @@
                    }
                    echo "<br>";
                    echo "<br>";
-                   echo "<div class='adbox'>this is reserved for adds</div>";
+                   // echo "<div class='adbox'>this is reserved for adds</div>";
                    foreach($results as $r)
                    {
-                          if($r['_source']['link']){
-                          echo "<a id='res' href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                          if(isset($r['_source']['typeoflink'])){
+                            if ($r['_source']['typeoflink']=='video') {
+                              $youtubelink = str_replace("watch?v=","embed/",$r['_source']['link']);
+                              $youtubelink = explode('https://www.youtube.com/watch?v=',$r['_source']['link']);
+                              // print_r($youtubelink);
+                              echo "<a id='res' href=video.php?video=".$youtubelink[1]." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            }
+                          
                           echo "<br>";
-                          }else{
-                          echo "<a id='res' href='SLS/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
-                          echo "<br>";
+                          }
+                          else{
+                            if($r['_source']['link']){
+                            echo "<a id='res' href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            echo "<br>";
+                            }else{
+                            echo "<a id='res' href='SLS/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            echo "<br>";
+                            }
                           }
                           if(isset($r['_source']['host'])){
                           echo "<a class='host' style='color: #006621'>".$r['_source']['host']."</a>";
@@ -132,11 +156,16 @@
 
                           echo "<p class='description' style='color: #545454'>".$r['_source']['description']."</p>";
                           // echo "<br>";
-                          echo "<a class='keywords' style='color: #545454'>Tags :<span class='label label-info'>".implode(',',$r['_source']['keywords'])."</label></a>";
+                          echo "<a class='keywords' style='color: #545454'>Tags :<span class='label label-info'>".strtolower(implode('</span> <span class="label label-info">',$r['_source']['keywords']))."</span></a>";
+                          if(isset($r['_source']['typeoflink'])){
+                            if ($r['_source']['typeoflink']=='video') {
+                              echo "<a class='keywords' href='video.php?video=".$youtubelink[1]."'' style='color: #545454'> <span class='label label-danger'>video</span></a>";
+                            }
+                          }
                           echo "<br>";
                           echo "<br>";
                    }
-                   echo '<pre>', print_r($response), '</pre>';
+                   // echo '<pre>', print_r($response), '</pre>';
                    echo "</div>";
                   }
                   else {

@@ -155,17 +155,17 @@
       </div>
 
       <div class="row">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-6">
-                <h3>How to Index Correctly</h3>
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
-                  </div>
-              </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3>How to Index Correctly</h3>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item vidshadow" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                </div>
             </div>
           </div>
         </div>
+      </div>
 
       </div>
     </div>

@@ -1,7 +1,7 @@
 <?php
     // include("db.php");
     session_start();
-    usleep(5000000);
+    usleep(1000000);
     // echo $_POST['password'];
     if (!empty($_POST))
     {

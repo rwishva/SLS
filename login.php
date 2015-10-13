@@ -109,6 +109,8 @@
                     <div class="col-sm-2 outline">      
                     </div>
                 </div>
+                <!-- <div class="row"><center>or</center></div> -->
+
                 <div class="row outline" id="searchbar">
                     <div class="col-sm-2 outline">
                     </div>

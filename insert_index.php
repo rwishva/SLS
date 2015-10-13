@@ -6,20 +6,19 @@
 
     if(!empty($_POST))
     {
-        if(isset($_POST['title'],$_POST['description'],$_POST['keywords'],$_POST['link']))
+        if(isset($_POST['title'],$_POST['description'],$_POST['keywords'],$_POST['link'],$_POST['optradio']))
         {
                 
                         
             $tittle = $_POST['title'];
             $description = $_POST['description'];
             $link = $_POST['link'];
+            $typeoflink = $_POST['optradio'];
             $keywords = explode(',',$_POST['keywords']);
             $ip = $_SERVER['REMOTE_ADDR'];
             $user = $_SESSION['luser'];
             $index = "sls";
             $type = "links";
-
-
 
            $decoded_url = parse_url($link);
            if(isset($decoded_url['scheme']))
@@ -45,6 +44,7 @@
                 'host' => $host,
                 'path' => $path,
                 'description' =>  $description,
+                'typeoflink' => $typeoflink,
                 'keywords' => $keywords
                 ] 
                 ]);

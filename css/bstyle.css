@@ -317,6 +317,12 @@ a#res{
     -moz-box-shadow: 0 8px 6px -6px #999;
         box-shadow: 0 9px 12px -6px #E6E6E6;
 }
+.vidshadow{
+  border: 1px dotted #cfcfcf;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 15px -3px rgba(0,0,0,0.75);
+}
 #img{
     height: 5%;
     width: 100%;
