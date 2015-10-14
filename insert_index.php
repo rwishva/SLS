@@ -87,14 +87,14 @@
         else 
         {   
 
-            $return = array('type'=>'success', 'message'=>'OK');
+            $return = array('type'=>'success', 'message'=>'Please fill all fields');
             echo json_encode($return); 
         }
     }
     else 
         {   
 
-            $return = array('type'=>'success', 'message'=>'OK');
+            $return = array('type'=>'success', 'message'=>'Please fill all fields');
             echo json_encode($return); 
         }    
 ?>

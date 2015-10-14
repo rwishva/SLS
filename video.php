@@ -42,6 +42,8 @@
     <body>
         <?php include 'header.php';?>
             <div class="container-fluid">
+                <div class="row outline"><center><img src="img/living.gif"></center>
+                </div>
                 <div class="row outline" id="searchbar">
                     <div class="col-sm-2 outline">
                     </div>
@@ -52,7 +54,7 @@
                             <center>
                                 <div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item vidshadow" width="600" height="338" src=https://www.youtube.com/embed/<?php echo $_GET['video']; ?> allowfullscreen=""></iframe>
+                                        <iframe class="embed-responsive-item vidshadow" width="720" height="360" src=https://www.youtube.com/embed/<?php echo $_GET['video']; ?> allowfullscreen=""></iframe>
                                     </div>
                                 </div>
                             </center>

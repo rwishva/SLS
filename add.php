@@ -30,12 +30,19 @@ $(document).ready(function() {
             success: function(json) {
                 $("#addform")[0].reset();
                 if(json.type == 'success') {
-                    $('#msg').css("color","green").html(json.message);
+                    // $('#msg').css("color","green").html(json.message);
+                    $('#msg').html("");
+                    $('#msg').css("color","green").append(json.message);
+                    $('#index-error').show().delay(3200).fadeOut(300);
                     $("#notice-box").after("yes");
                 } else if(json.type == 'warning'){
                     $('#msg').css("color","yellow").html(json.message);
                 } else if(json.type == 'error'){
-                    $('#msg').css("color","red").html(json.message);
+                    // $('#msg').css("color","red").html(json.message);
+                    $('#msg').html("");
+                    $('#msg').append(json.message);
+                    $('#index-error').show().delay(3200).fadeOut(300);
+
                 }
                 $('.loading').remove();
                 
@@ -45,6 +52,7 @@ $(document).ready(function() {
     });
 });
 </script>
+
 </head>
 <body>
 <?php include 'header.php';?>
@@ -57,9 +65,12 @@ $(document).ready(function() {
 
       <div class="col-sm-10 outline">
         <center>
-          <h1 id="msg"></h1>
+          <div class="login-ui" id="index-error">
+            <div class="index-error-dsp">
+              <p id="msg"></p>
+            </div>
+          </div>
         </center>
-        
       </div>
 
       <div class="col-sm-1 outline">
@@ -129,12 +140,14 @@ $(document).ready(function() {
 
                         <div class="input-group">
                           <div class="input-group">
+                            <label class="control-label" for="keywords">Index Type</label>
+                            </br>
                             <label class="radio-inline"><input type="radio" value="video" name="optradio">Video</label>
                             <label class="radio-inline"><input type="radio" value="image" name="optradio">Image</label>
                             <label class="radio-inline"><input type="radio" value="link" name="optradio">Link</label>
                           </div>
                         </div><!-- /input-group -->
-
+                          </br>
                         <!-- Button -->
                         <div class="control-group">
                           <label class="control-label" for="submit"></label>

@@ -21,7 +21,7 @@ else
   <div class="container-fluid head-contain">
     <div class="row-fluid nav-middle">
       <div class="navbar-header nav-middle">
-        <a class="navbar-brand nav-middle" href="/SLS/">SLS - We provide Links</a>
+        <a class="navbar-brand nav-middle" href="/SLS/">SLS - We provide pure srilankan Links</a>
       </div>
       <?php 
         if (isset($_SESSION['luser'])){

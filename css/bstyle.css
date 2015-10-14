@@ -253,7 +253,7 @@
 }
 body {
     /*opacity: .9;*/
-    background: transparent url(overlays/02.png) center center repeat;
+    /*background: transparent url(overlays/02.png) center center repeat;*/
 }
 
 .header_box {
@@ -339,7 +339,11 @@ a#res{
 #msg{
     /*height: 5%;*/
     width: 100%;
-    padding-top: 10; 
+    /*padding-top: 10; */
+    margin: auto;
+}
+#msg p{
+  margin: auto;
 }
 .login-header{
   text-align: center;
@@ -408,6 +412,22 @@ li span a #wihte{
   /*height: 34px;*/
   border-color: transparent; 
   /*min-width: 100px;*/
+}
+#btn-logout-pannel{
+  font-size: 12px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  background: #C5C5C5;
+  padding: 3px 5px 3px 5px;
+  text-decoration: none;
+  border-radius: 0;
+  margin: auto;
+  border-color: transparent; 
+}
+#btn-logout-pannel:hover {
+  background: #B7B7B7;
+  text-decoration: none;
 }
 #btn-login:hover {
   background: #f73b3b;
@@ -479,10 +499,25 @@ input[type=checkbox] {
     color: #000000;
     padding: 7px;
     /*width: 300px;*/
-     -webkit-box-shadow: 0 8px 6px -6px #999;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
-        box-shadow: 0 9px 12px -6px #E6E6E6;
-        font-size: 12px;
+    box-shadow: 0 9px 12px -6px #E6E6E6;
+    font-size: 12px;
+}
+.index-error-dsp {
+    /*text-align: left;*/
+    background-color: #ffebe8;
+    border: 1px dotted #dd3c10;
+    color: #000000;
+    padding: 7px;
+    /*width: 300px;*/
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 9px 12px -6px #E6E6E6;
+    font-size: 12px;
+}
+#index-error{
+  display: none;
 }
 .login-error-dsp a{
   /*color: black;*/
@@ -545,4 +580,20 @@ p.description{
 }
 .label-danger {
     background-color: #cc181e;
+}
+#pannel{
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  /*opacity: 0.8;*/
+}
+a#pannel{
+  margin: auto;
 }

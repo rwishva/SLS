@@ -78,6 +78,18 @@
   });
 </script>
 
+<script>
+$(document).ready(function(){
+    // $("#btn-logout").click(function(){
+    //     $("p").hide();
+    // });
+    $("#btn-logout").click(function(){
+        $("#pannel").toggle(300);
+    });
+});
+</script>
+
+
 </head>
  
 <body>
@@ -85,6 +97,18 @@
 <?php include 'header.php';?>
 <div id="loading-img"></div>
   <div class="container-fluid">
+
+  <div id="pannel">
+    <form action="logout.php" method="post">
+    <a href=""><?php echo ucfirst($username); ?></a>
+    <button type="submit" class="btn btn-default navbar-btn pull-right" id="btn-logout-pannel" data-toggle="popover">Logout
+    </button>
+
+    <!-- <p class="navbar-text pull-right"><a href="#" class="navbar-link"><?php echo ucfirst($username); ?></a></p> -->
+  </form>
+  </div>
+
+
 
     <div class="row outline" id="searchbar">
       <div class="col-sm-1 outline">
@@ -154,7 +178,7 @@
       </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-6">
@@ -165,7 +189,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       </div>
     </div>
