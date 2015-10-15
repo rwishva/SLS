@@ -98,9 +98,16 @@
                       ];
                   }
                   
-           
+                $updateone = [
+                              'index' => 'sls',
+                              'type' => 'links',
+                              'id' => 'AVBgu2RGYBRh9cklu78f',
+                              'body' => [
+                                'script' => 'ctx._source.views+=1'
+                              ]
+                          ];
                       
-            
+                  $updone = $client->update($updateone);
                   #$params = "['index' => 'srilanka','type' => 'links','body' => ['query' => ['bool' => [ 'should' => [['match' => ['_all' => 'this']],['match' => ['_all' => 'is']],['match' => ['_all' => 'fuck']]]]]]]";
                   #echo $params;
                   $response = $client->search($params);
@@ -162,6 +169,10 @@
                               echo "<a class='keywords' href='video.php?video=".$youtubelink[1]."'' style='color: #545454'> <span class='label label-danger'>video</span></a>";
                             }
                           }
+                          if(isset($r['_source']['views'])){
+                              echo "<a class='keywords' style='color: #545454'> <span class='label label-success'>v : ".$r['_source']['views']."</span></a>";
+                          }
+                          echo "<a class='keywords' style='color: #545454'> <span class='label label-success'>".$r['_id']."</span></a>";
                           echo "<br>";
                           echo "<br>";
                    }

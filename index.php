@@ -84,8 +84,23 @@ $(document).ready(function(){
     //     $("p").hide();
     // });
     $("#btn-logout").click(function(){
+        $("#uptic").toggle();
         $("#pannel").toggle(300);
+        
     });
+});
+
+$(document).mouseup(function (e)
+{
+    var container = $("#pannel");
+    var btn = $("#btn-logout");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0 && !btn.is(e.target)) // ... nor a descendant of the container
+    {
+        container.hide(300);
+        $("#uptic").hide();
+    }
 });
 </script>
 
@@ -99,6 +114,7 @@ $(document).ready(function(){
   <div class="container-fluid">
 
   <div id="pannel">
+    <div id="uptic"></div>
     <form action="logout.php" method="post">
     <a href=""><?php echo ucfirst($username); ?></a>
     <button type="submit" class="btn btn-default navbar-btn pull-right" id="btn-logout-pannel" data-toggle="popover">Logout
