@@ -14,44 +14,7 @@ if (!isset($_SESSION['luser'])) {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
 <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
 <script src="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.min.js"></script>
-
-
-<script>
-$(document).ready(function() {
-    $('#addform').submit(function() {
-        //event.preventDefault();
-        var status = '<img id="img-login" class="loading" src="img/loading-2.gif" alt="Loading..." />';
-        $("#loading-img").after(status);
-        $.ajax({
-            type: 'POST',
-            url: $(this).attr('action'),
-            data: $(this).serialize(),
-            dataType: 'json',
-            success: function(json) {
-                $("#addform")[0].reset();
-                if(json.type == 'success') {
-                    // $('#msg').css("color","green").html(json.message);
-                    $('#msg').html("");
-                    $('#msg').css("color","green").append(json.message);
-                    $('#index-error').show().delay(3200).fadeOut(300);
-                    $("#notice-box").after("yes");
-                } else if(json.type == 'warning'){
-                    $('#msg').css("color","yellow").html(json.message);
-                } else if(json.type == 'error'){
-                    // $('#msg').css("color","red").html(json.message);
-                    $('#msg').html("");
-                    $('#msg').append(json.message);
-                    $('#index-error').show().delay(3200).fadeOut(300);
-
-                }
-                $('.loading').remove();
-                
-            }
-        })
-        return false;
-    });
-});
-</script>
+<script src="js/slsjs.js"></script>
 
 </head>
 <body>
@@ -188,7 +151,7 @@ $(document).ready(function() {
               <div class="col-sm-6">
                 <h3>How to Index Correctly</h3>
                   <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item vidshadow" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+                    <iframe class="embed-responsive-item vidshadow" src="//www.youtube.com/embed/ePbKGoIGAXY" allowfullscreen=""></iframe>
                   </div>
               </div>
             </div>

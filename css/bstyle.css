@@ -423,7 +423,8 @@ li span a #wihte{
   text-decoration: none;
   border-radius: 0;
   margin: auto;
-  border-color: transparent; 
+  border-color: transparent;
+  margin-bottom: 5px; 
 }
 #btn-logout-pannel:hover {
   background: #B7B7B7;
@@ -590,8 +591,9 @@ p.description{
   box-shadow: 0 2px 10px rgba(0,0,0,.2);
   border: 1px solid #ccc;
   width: 200px;
-  height: 50px;
+  /*height: 200px;*/
   padding: 10px;
+  z-index: 1;
   /*opacity: 0.8;*/
 }
 a#pannel{
@@ -615,4 +617,7 @@ a#pannel{
   width: 0;
   -webkit-animation: gb__a .2s;
   animation: gb__a .2s;
+}
+.greycolor{
+  color: grey;
 }

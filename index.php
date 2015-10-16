@@ -16,116 +16,14 @@
         <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
         <link rel='stylesheet' type='text/css' href='css/style_sign.css' />
         <script src="js/jquery.min.js"></script>
-      <!-- <link href="css/style.css" rel="stylesheet"> -->
-<script>
-  function showResult(str) {
-    if (str.length==0) { 
-      document.getElementById("livesearch").innerHTML="";
-      document.getElementById("livesearch").style.border="0px";
-      return;
-    }
-    if (window.XMLHttpRequest) {
-      // code for IE7+, Firefox, Chrome, Opera, Safari
-      xmlhttp=new XMLHttpRequest();
-    } else {  // code for IE6, IE5
-      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange=function() {
-      if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-        document.getElementById("resbox").innerHTML=xmlhttp.responseText;
-        // document.getElementById("resbox").style.border="1px solid #A5ACB2";
-      }
-    }
-    xmlhttp.open("GET","get_results.php?idx=no&q="+str,true);
-    xmlhttp.send();
-  }
-</script>
-
-<script type="text/javascript">
-  window.onload = function() {
-    document.getElementById("query").focus();
-  };
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    // $("#add_err").css('display', 'none', 'important');
-     $("#btn-login").click(function(){  
-        username=$("#email").val();
-        password=$("#password").val();
-        $.ajax({
-         type: "POST",
-         url: "get_login.php",
-        data: "email="+username+"&password="+password,
-         success: function(html){    
-        if(html=='true')    {
-         //$("#add_err").html("right username or password");
-         window.location="index.php";
-        }
-        else    {
-        window.location="login.php?error=yes";
-        }
-         },
-         beforeSend:function()
-         {
-         // $("#add_err").delay( 100000 );
-
-        $("#loading-img").html("<img id='img-login' src='img/loading-2.gif' />")
-         }
-        });
-      return false;
-    });
-  });
-</script>
-
-<script>
-$(document).ready(function(){
-    // $("#btn-logout").click(function(){
-    //     $("p").hide();
-    // });
-    $("#btn-logout").click(function(){
-        $("#uptic").toggle();
-        $("#pannel").toggle(300);
-        
-    });
-});
-
-$(document).mouseup(function (e)
-{
-    var container = $("#pannel");
-    var btn = $("#btn-logout");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0 && !btn.is(e.target)) // ... nor a descendant of the container
-    {
-        container.hide(300);
-        $("#uptic").hide();
-    }
-});
-</script>
-
-
-</head>
+        <script src="js/slsjs.js"></script>
+    </head>
  
 <body>
                 
 <?php include 'header.php';?>
 <div id="loading-img"></div>
   <div class="container-fluid">
-
-  <div id="pannel">
-    <div id="uptic"></div>
-    <form action="logout.php" method="post">
-    <a href=""><?php echo ucfirst($username); ?></a>
-    <button type="submit" class="btn btn-default navbar-btn pull-right" id="btn-logout-pannel" data-toggle="popover">Logout
-    </button>
-
-    <!-- <p class="navbar-text pull-right"><a href="#" class="navbar-link"><?php echo ucfirst($username); ?></a></p> -->
-  </form>
-  </div>
-
-
-
     <div class="row outline" id="searchbar">
       <div class="col-sm-1 outline">
       </div>

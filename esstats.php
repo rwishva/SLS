@@ -1,6 +1,7 @@
 <?php
     // include("db.php");
     session_start();
+    require_once 'init.php';
     // echo $_POST['password'];
     if (!empty($_POST))
     {
@@ -44,23 +45,37 @@
     <body>
         <?php include 'header.php';?>
             <div class="container-fluid">
+            <div class="row greycolor"><center><h3>Stats</h3></center></div>
                 <div class="row"><center><img src="img/living.gif"></center>
                 </div>
-                <div class="row greycolor"><center><h3>Video</h3></center></div>
                 <div class="row outline" id="searchbar">
                     <div class="col-sm-2 outline">
+
+                    <div class="row">
+                            <center>
+                            
+                                <div class="header_box" style="width: auto">
+                                <h2>Total Views</h2>
+                                <h3><div id="refreshDIV"></div></h3>
+                                </div>
+                            
+                            </center>
+                        </div>
                     </div>
 
                     
                     <div class="col-lg-8 col-md-8 col-sm-8 head-contain">
                         <div class="row">
-                            <center>
-                                <div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item vidshadow" width="720" height="360" src=https://www.youtube.com/embed/<?php echo $_GET['video']; ?> allowfullscreen=""></iframe>
-                                    </div>
+                            <!-- <center> -->
+                            
+                                <div class="header_box" style="width:800px">
+                                <?php 
+                                $response = $client->indices()->stats(); 
+                                echo '<pre style="background-color:transparent; border:none">', print_r($response['indices']['sls']), '</pre>';
+                                ?>
                                 </div>
-                            </center>
+                            
+                            <!-- </center> -->
                         </div>
                         <div class="row">
                             <center>
