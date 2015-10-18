@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SESSION['luser'])) {
-        header('Location: /SLS/login.php');
+        header('Location: /SLS/login.php?notloggedin=yes');
     }
     else {
         $now = time(); // Checking the time now when home page starts.

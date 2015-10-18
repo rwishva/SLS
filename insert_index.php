@@ -45,6 +45,7 @@
                 'path' => $path,
                 'description' =>  $description,
                 'typeoflink' => $typeoflink,
+                'views' => 0,
                 'keywords' => $keywords
                 ] 
                 ]);

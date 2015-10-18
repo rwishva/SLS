@@ -8,13 +8,14 @@ if (!isset($_SESSION['luser'])) {
 
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap-tagsinput.min.js"></script>
 <link href='css/bootstrap.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.css" />
-<link rel='stylesheet' type='text/css' href='css/bstyle.css' />
 <script src="//cdn.jsdelivr.net/bootstrap.tagsinput/0.4.2/bootstrap-tagsinput.min.js"></script>
 <script src="js/slsjs.js"></script>
+<link rel='stylesheet' type='text/css' href='css/bstyle.css' />
 
 </head>
 <body>
@@ -58,7 +59,7 @@ if (!isset($_SESSION['luser'])) {
 
       <div class="col-sm-5 outline">
         <div id="resbox">
-          <form class="form-horizontal outline bordershadow" id="addform" action="insert_index.php">
+          <form class="form-horizontal outline bordershadow whitebg" id="addform" action="insert_index.php">
                         <fieldset>
 
                         <!-- Form Name -->
@@ -115,7 +116,7 @@ if (!isset($_SESSION['luser'])) {
                         <div class="control-group">
                           <label class="control-label" for="submit"></label>
                           <div class="controls">
-                            <button id="btn-red" name="submit" type="submit" class="btn btn-success">Index</button>
+                            <button id="gold" name="submit" type="submit" class="btn btn-success">Index</button>
                             <p id="msg"></p>
                           </div>
                         </div>

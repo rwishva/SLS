@@ -12,28 +12,32 @@
 <html>
     <head>
         
-        <link href='css/bootstrap.min.css' rel='stylesheet'>
-        <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel='stylesheet' type='text/css' href='css/style_sign.css' />
         <script src="js/jquery.min.js"></script>
         <script src="js/slsjs.js"></script>
+        <link href='css/bootstrap.min.css' rel='stylesheet'>
+        <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+
     </head>
  
 <body>
                 
 <?php include 'header.php';?>
 <div id="loading-img"></div>
+<div id="mobileapp"></div>
   <div class="container-fluid">
     <div class="row outline" id="searchbar">
       <div class="col-sm-1 outline">
       </div>
 
-      <div class="col-sm-5 outline">
+      <div class="col-sm-5 outline nopad">
         <form>
           <div class="centering text-center" id="searchbox">
               <div id="imaginary_container"> 
                 <div class="input-group stylish-input-group">
-                    <input id="query" type="text" class="form-control"  placeholder="Search &larr;" name="q" onkeyup="showResult(this.value)">
+                  <input id="query" type="text" class="form-control"  placeholder="Search &larr;" name="q" onkeyup="showResult(this.value)">
                     <span class="input-group-addon">
                         <button type="submit">
                             <!-- <span class="search-ico"></span> -->
@@ -50,11 +54,8 @@
         <div class="row outline">
           <div class="col-sm-1">
             <div class="container-fluid nopad">
-          <!--   <form action="add.php">
-              <button type="submit" class="btn btn-default navbar-btn" id="indexbtn">Index Your Links</button>
-            </form> -->
             <form action="add.php">
-              <button type="submit" class="btn btn-default navbar-btn" id="btn-red">Index Your Links</button>
+               <button type="submit" class="btn btn-default navbar-btn" id="gold">Index Your Links</button>
             </form>
             </div>
           </div>
@@ -66,9 +67,10 @@
       <div class="col-sm-1 outline">
       </div>
 
-      <div class="col-sm-5 outline">
+      <div class="col-sm-5 outline whitebg">
           <div id="resbox">
             <?php include 'get_results.php' ?>
+
           </div>
       </div>
 
@@ -108,10 +110,34 @@
       </div>
     </div>
 
+    <div class="row outline" id="index-links">
+      <div class="col-sm-2 outline">
+      </div>
+
+      <div class="col-sm-8 outline">
+        
+        <div class="row outline">
+          <center>
+            <div class="container-fluid nopad">
+              <form action="add.php">
+                &rarr; <button type="submit" class="btn btn-default navbar-btn" id="gold">Index Your Links</button> &larr; 
+              </form>
+            </div>
+          </center>
+        </div>
+        
+      </div>
+
+      <div class="col-sm-2 outline">
+      </div>      
+    </div>
+
   </div>
 
                     
-<?php include 'footer.php';?>
+<?php 
+include 'footer.php';
+?>
 
 </body>
 

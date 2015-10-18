@@ -59,6 +59,23 @@
                                 //                 ]
                                 //               ];
               }
+              elseif ($_GET['q']=="") {
+                      $params = [
+                            'index' => 'sls',
+                            'type' => 'links',
+                            'body' => [
+                                        'query' => [
+                                            'bool' => [ 
+                                                'should' => [ 
+                                                               // ['match' => ['_all' => $q]]
+                                    ['match' => ['user' => 'rangana']],
+                                    //['match' => ['title' => $q]]
+                                      ]
+                                  ]
+                              ]
+                          ]
+                      ];
+              }
                   else {
 
                       $params = [
@@ -80,12 +97,17 @@
 
                }
                else {
+                if(isset($_GET['start'])){
+                  $from = $_GET['start'];
+                }
+                else{
+                  $from = 0;
+                }
 
                       $params = [
                             'index' => 'sls',
                             'type' => 'links',
-                            'size'=> ['100'],//default 10
-                            'from'=> ['0'], //default 0
+                            'from'=> [$from], //default 0
                             'body' => [
                                         'query' => [
                                             'bool' => [ 
@@ -100,16 +122,6 @@
                       ];
                   }
                   
-                $updateone = [
-                              'index' => 'sls',
-                              'type' => 'links',
-                              'id' => 'AVBgu2RGYBRh9cklu78f',
-                              'body' => [
-                                'script' => 'ctx._source.views+=1'
-                              ]
-                          ];
-                      
-                  $updone = $client->update($updateone);
                   #$params = "['index' => 'srilanka','type' => 'links','body' => ['query' => ['bool' => [ 'should' => [['match' => ['_all' => 'this']],['match' => ['_all' => 'is']],['match' => ['_all' => 'fuck']]]]]]]";
                   #echo $params;
                   $response = $client->search($params);
@@ -144,17 +156,23 @@
                               $youtubelink = str_replace("watch?v=","embed/",$r['_source']['link']);
                               $youtubelink = explode('https://www.youtube.com/watch?v=',$r['_source']['link']);
                               // print_r($youtubelink);
-                              echo "<a id='res' href=video.php?video=".$youtubelink[1]." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                              echo "<a id='res' data-id=".$r['_id']." href=video.php?video=".$youtubelink[1]." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                              echo "<br>";
                             }
-                          
-                          echo "<br>";
+                            else{
+                              if($r['_source']['link']){
+                            echo "<a id='res' data-id=".$r['_id']." href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            echo "<br>";
+                            }
+
+                            }
                           }
                           else{
                             if($r['_source']['link']){
-                            echo "<a id='res' href=".$r['_source']['link']." style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            echo "<a id='res' data-id=".$r['_id']."  style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
                             echo "<br>";
                             }else{
-                            echo "<a id='res' href='SLS/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
+                            echo "<a id='res' data-id=".$r['_id']." href='SLS/' style='text-decoration: none'>".ucfirst($r['_source']['tittle'])."</a>";
                             echo "<br>";
                             }
                           }
@@ -172,13 +190,50 @@
                             }
                           }
                           if(isset($r['_source']['views'])){
-                              echo "<a class='keywords' style='color: #545454'> <span class='label label-success'>v : ".$r['_source']['views']."</span></a>";
+                              echo "<a class='keywords' style='color: #545454'> <span class='label heat'>views : ".$r['_source']['views']."</span></a>";
                           }
-                          echo "<a class='keywords' style='color: #545454'> <span class='label label-success'>".$r['_id']."</span></a>";
+                          // echo "<a class='keywords' style='color: #545454'> <span class='label label-success'>".$r['_id']."</span></a>";
                           echo "<br>";
                           echo "<br>";
                    }
                    // echo '<pre>', print_r($response), '</pre>';
+                   $paginationcount = $response['hits']['total']/10;
+                   $roundedup = round_up($paginationcount,0);
+                   // $roundedup = 100;
+                    echo "<nav>
+                            <ul class='pagination pagination-sm'>
+                              <li>
+                                <a href='#' aria-label='Previous'>
+                                  <span aria-hidden='true'>&laquo;</span>
+                                </a>
+                              </li>";
+                    for ($i=0; $i < $roundedup ; $i++) { 
+                      if (isset($_GET['q'])){
+                        if (isset($_GET['start'])) {
+                          if ($_GET['start']==(($i)*10)) {
+                          echo "<li class='active'><a href='/SLS/?q=".$_GET['q']."&start=".(($i)*10)."'>".($i+1)."</a></li>";
+                          }
+                          else{
+                          echo "<li><a href='/SLS/?q=".$_GET['q']."&start=".(($i)*10)."'>".($i+1)."</a></li>";
+                          }
+                        }
+                        else{
+                          echo "<li><a href='/SLS/?q=".$_GET['q']."&start=".(($i)*10)."'>".($i+1)."</a></li>";
+                        }
+                        
+                      }
+                      else{
+                      echo "<li><a href='/SLS/?start=".(($i)*10)."'>".($i+1)."</a></li>";
+                     } 
+                    }
+              
+                    echo "      <li>
+                                <a href='#' aria-label='Next'>
+                                  <span aria-hidden='true'>&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>";
                    echo "</div>";
                   }
                   else {

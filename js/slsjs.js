@@ -121,19 +121,27 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function () {
-var seconds = 5000; // time in milliseconds
-var reload = function() {
-   $.ajax({
-      url: 'getstats.php',
+$(document).ready(function(){
+
+    $("a#res").click(function(){
+      var idxid = {
+            idxid: $(this).data("id"),
+          }
+    $.ajax({
+      type: 'POST',
+      data: idxid,
+      url: 'statscount.php',
       cache: false,
+      dataType: 'json',
       success: function(data) {
-          $('#refreshDIV').html(data);
-          setTimeout(function() {
-             reload();
-          }, seconds);
       }
    });
- };
- reload();
+});
+});
+
+$(document).ready(function(){
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $('#mobileapp').html("");
+  $('#mobileapp').css("color","green").append("<row><center>Use our mobile app for better experience</center></row>");
+}
 });

@@ -12,7 +12,7 @@
         // if(mysqli_num_rows($get_user_query)!=0){
         // $rs = mysqli_fetch_assoc($get_user_query);
         $rs['email'] = "rangana";
-        $rs['passwd'] = "123456";
+        $rs['passwd'] = "aaa";
         if ($rs['email']==$v3 && $rs['passwd']==$v4)
         {
             echo "true";
@@ -35,13 +35,18 @@
 
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">    
         <link href='css/bootstrap.min.css' rel='stylesheet'>
         <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/slsjs.js"></script>
         
     </head>
     <body>
         <?php include 'header.php';?>
+        <div id="loading-img"></div>
             <div class="container-fluid">
+                <div class="row greycolor"><center><h3>SLS is the Srilanka's largest user driven link provider</h3></center></div>
                 <div class="row outline" id="searchbar">
                     <div class="col-sm-2 outline">
                     </div>
@@ -60,6 +65,7 @@
                                                     <ul>
                                                     <li>My username correct ?</li>
                                                     <li>My<strong> password </strong>correct ?</li>
+                                                    <li>I don't have an<strong> <a href="signup.php">Account</a></strong></li>
                                                     <li>No, Try again</li>
                                                     </ul>
                                                 </div>
@@ -68,11 +74,31 @@
                                     </div>
                                 <?php
                                 }
+                                elseif (isset($_GET['notloggedin'])) {
+                                    ?>
+                                        <div class="row">
+                                            <center>
+                                                <div class="login-ui">
+                                                    <div class="login-error-dsp">
+                                                      <a><strong>Hmm</strong> :</a>
+                                                      <a>You Must login to add indexes !</a>
+                                                        <ul>
+                                                        <li>My username correct ?</li>
+                                                        <li>My<strong> password </strong>correct ?</li>
+                                                        <li>I don't have an<strong> <a href="signup.php">Account</a></strong></li>
+                                                        <li>No, Try again</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+                                <?php
+                                }
                                 ?>
                                 
                         <div class="row">
                             <center>
-                                <div class="login-ui bordershadow">
+                                <div class="login-ui bordershadow whitebg">
                                     <center>
                                         <form name="loginsub" class="form-middle" method="post">
                                             <table class="tbl-login">
@@ -118,7 +144,7 @@
                     <div class="col-sm-8">
                         <div class="raw">
                             <center>
-                                <div class="login-ui-signup bordershadow">
+                                <div class="login-ui-signup bordershadow whitebg">
                                     <center>
                                         <form class="form-middle" name="loginsub" method="post">
                                             Don't have an account? <a href="signup.php">Sign up</a>

@@ -30,4 +30,11 @@ function selected_pxls($q)
     $return = array($array_count,$final_keys); 
     return $return;
 }
+function round_up($value, $places) 
+{
+    $mult = pow(10, abs($places)); 
+     return $places < 0 ?
+    ceil($value / $mult) * $mult :
+        ceil($value * $mult) / $mult;
+}
 ?>

@@ -48,6 +48,7 @@
 
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">    
     <link href='css/bootstrap.min.css' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' href='css/bstyle.css' />
     
@@ -56,17 +57,17 @@
 <?php include 'header.php';?>
         
 <div class="container-fluid">
-
+    <div class="row greycolor"><center><h3>SLS is the Srilanka's largest user driven link provider</h3></center></div>
     <div class="row outline" id="searchbar">
       <div class="col-sm-2 outline">
       </div>
 
     <div class="col-sm-8">
         <center>
-            <div class="signup-ui bordershadow">
+            <div class="signup-ui bordershadow whitebg">
                 <center>
                     <div class="signup-align">
-                        <form name="loginsub" method="post">
+                        <form name="loginsub">
                             <table class="tbl-login">
                                 <tbody>
                                     <tr>
@@ -125,9 +126,29 @@
     </div>
     <div class="col-sm-2 outline">      
     </div>
-
-
   </div>
+  <div class="row outline" id="searchbar">
+                    <div class="col-sm-2 outline">
+                    </div>
+
+                    <div class="col-sm-8">
+                        <div class="raw">
+                            <center>
+                                <div class="login-ui-signup bordershadow whitebg">
+                                    <center>
+                                        <form class="form-middle" name="loginsub" method="post">
+                                            Already have an account? <a href="login.php">Login</a>
+                                        </form>
+                                    </center>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 outline">      
+                    </div>
+                </div>
+
   <div id="msg"></div>
 </div>
  <?php include 'footer.php';?>  
