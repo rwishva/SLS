@@ -26,8 +26,9 @@
                 
 <?php include 'header.php';?>
 <div id="loading-img"></div>
-<div id="mobileapp"></div>
+
   <div class="container-fluid">
+    <div class="row topmargin"><div id="mobileapp"></div></div>
     <div class="row outline" id="searchbar">
       <div class="col-sm-1 outline">
       </div>
@@ -51,7 +52,7 @@
       </div>
 
       <div class="col-sm-6 outline">
-        <div class="row outline">
+        <div class="row outline aligning">
           <div class="col-sm-1">
             <div class="container-fluid nopad">
             <form action="add.php">

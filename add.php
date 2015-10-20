@@ -22,6 +22,8 @@ if (!isset($_SESSION['luser'])) {
 <?php include 'header.php';?>
 <span id="loading-img"></span>        
 <div class="container-fluid">
+  <div class="row topmargin"><div id="mobileapp"></div></div>
+  <div class="row"><center><h3>Indexing</h3></center></div>
 
     <div class="row outline">
       <div class="col-sm-1 outline">
@@ -116,7 +118,7 @@ if (!isset($_SESSION['luser'])) {
                         <div class="control-group">
                           <label class="control-label" for="submit"></label>
                           <div class="controls">
-                            <button id="gold" name="submit" type="submit" class="btn btn-success">Index</button>
+                            <button id="gold" name="submit" type="submit" class="btn btn-success">Index Links</button>
                             <p id="msg"></p>
                           </div>
                         </div>
@@ -151,7 +153,7 @@ if (!isset($_SESSION['luser'])) {
             <div class="row">
               <div class="col-sm-6">
                 <h3>How to Index Correctly</h3>
-                  <div class="embed-responsive embed-responsive-16by9">
+                  <div class="embed-responsive embed-responsive-16by9 vidshadow">
                     <iframe class="embed-responsive-item vidshadow" src="//www.youtube.com/embed/ePbKGoIGAXY" allowfullscreen=""></iframe>
                   </div>
               </div>

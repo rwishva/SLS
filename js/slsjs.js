@@ -11,6 +11,8 @@ function showResult(str) {
       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
     }
     xmlhttp.onreadystatechange=function() {
+        var status = '<img id="img-login" class="loading" src="img/loading-2.gif" alt="Loading..." />';
+        $("#loading-img").after(status);
       if (xmlhttp.readyState==4 && xmlhttp.status==200) {
         document.getElementById("resbox").innerHTML=xmlhttp.responseText;
         // document.getElementById("resbox").style.border="1px solid #A5ACB2";

@@ -57,7 +57,8 @@
 <?php include 'header.php';?>
         
 <div class="container-fluid">
-    <div class="row greycolor"><center><h3>SLS is the Srilanka's largest user driven link provider</h3></center></div>
+    <div class="row topmargin"><div id="mobileapp"></div></div>
+    <div class="row"><center><h3>SLS is the Srilanka's largest user driven link provider</h3></center></div>
     <div class="row outline" id="searchbar">
       <div class="col-sm-2 outline">
       </div>

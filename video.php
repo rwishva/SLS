@@ -45,9 +45,10 @@
     <body>
         <?php include 'header.php';?>
             <div class="container-fluid">
+                <div class="row topmargin"><div id="mobileapp"></div></div>
                 <!-- <div class="row"><center><img src="img/living.gif"></center> -->
                 <!-- </div> -->
-                <div class="row greycolor"><center><h3>Video</h3></center></div>
+                <div class="row"><center><h3>Video</h3></center></div>
                 <div class="row outline head-contain" id="searchbar">
                     <div class="col-sm-3 outline">
                     </div>
@@ -57,8 +58,8 @@
                         <div class="row">
                             <center>
                                 <div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item vidshadow" width="720" height="360" src=https://www.youtube.com/embed/<?php echo $_GET['video']; ?> allowfullscreen=""></iframe>
+                                    <div class="embed-responsive embed-responsive-16by9 vidshadow">
+                                        <iframe class="embed-responsive-item" width="720" height="360" src=https://www.youtube.com/embed/<?php echo $_GET['video']; ?> allowfullscreen=""></iframe>
                                     </div>
                                 </div>
                             </center>
@@ -69,6 +70,8 @@
                     </div>
                 </div>
                 <div id="msg"></div>
+                <div class="row topmargin"><div id="mobileapp"></div></div>
+                <div class="row topmargin"><div id="mobileapp"></div></div>
             </div>
          <?php include 'footer.php';?>  
     </body>

@@ -15,7 +15,8 @@
     <body>
         <?php include 'header.php';?>
             <div class="container-fluid">
-            <div class="row greycolor"><center><h3>Stats</h3></center></div>
+                <div class="row topmargin"><div id="mobileapp"></div></div>
+            <div class="row"><center><h3>Stats</h3></center></div>
                 <div class="row"><center><img src="img/living.gif"></center>
                 </div>
                 <div class="row outline head-contain" id="searchbar">
